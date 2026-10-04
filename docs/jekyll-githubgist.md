@@ -1,9 +1,9 @@
 > ## Content Index
-> Fetch the complete content index at: http://localhost:2368/llms.txt
+> Fetch the complete content index at: http://64.110.107.153:2368/llms.txt
 > Use this file to discover other available public pages before exploring further.
 
 # Jekyll 따라하기(7) - GitHub Gist
-- URL: http://localhost:2368/jekyll-githubgist/
+- URL: http://64.110.107.153:2368/jekyll-githubgist/
 - Published: 2021-01-08T10:00:00.000Z
 - Updated: 2021-01-08T10:00:00.000Z
 - Author: Ghost

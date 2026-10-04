@@ -1,0 +1,2 @@
+{"name":"Log","hostname":"8806ff046b15","pid":8388,"level":50,"version":"6.67.0","msg":"Could not get webhook secret for ActivityPub SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON","time":"2026-10-04T07:41:56.315Z","v":0}
+{"name":"Log","hostname":"8806ff046b15","pid":8388,"level":50,"version":"6.67.0","msg":"No webhook secret found - cannot initialise","time":"2026-10-04T07:41:56.317Z","v":0}

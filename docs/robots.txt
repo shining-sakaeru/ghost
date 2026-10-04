@@ -1,5 +1,5 @@
 User-agent: *
-Sitemap: http://localhost:2368/sitemap.xml
+Sitemap: http://64.110.107.153:2368/sitemap.xml
 Disallow: /ghost/
 Disallow: /email/
 Disallow: /members/api/comments/counts/

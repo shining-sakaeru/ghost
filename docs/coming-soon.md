@@ -1,9 +1,9 @@
 > ## Content Index
-> Fetch the complete content index at: http://localhost:2368/llms.txt
+> Fetch the complete content index at: http://64.110.107.153:2368/llms.txt
 > Use this file to discover other available public pages before exploring further.
 
 # Coming soon
-- URL: http://localhost:2368/coming-soon/
+- URL: http://64.110.107.153:2368/coming-soon/
 - Published: 2026-10-04T04:26:04.000Z
 - Updated: 2026-10-04T04:26:04.000Z
 - Author: Ghost
