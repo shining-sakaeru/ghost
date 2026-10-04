@@ -1,0 +1,17 @@
+import type { Address } from 'viem';
+/** Constructs the canonical `did:pkh:eip155` source DID for Tempo proof credentials. */
+export declare function proofSource(parameters: {
+    address: string;
+    chainId: number;
+}): string;
+/** Parses a Tempo `did:pkh:eip155` source DID into its chain ID and wallet address. */
+export declare function parsePkhSource(source: string): {
+    address: Address;
+    chainId: number;
+} | null;
+/** Parses a Tempo proof credential source DID into its chain ID and wallet address. */
+export declare function parseProofSource(source: string): {
+    address: Address;
+    chainId: number;
+} | null;
+//# sourceMappingURL=Proof.d.ts.map

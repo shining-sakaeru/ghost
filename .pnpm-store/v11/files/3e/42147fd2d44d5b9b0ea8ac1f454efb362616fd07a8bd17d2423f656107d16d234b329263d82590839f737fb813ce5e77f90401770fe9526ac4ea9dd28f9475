@@ -1,0 +1,791 @@
+'use strict'
+
+const memoizeOne = require('memoize-one').default || require('memoize-one')
+const debug = require('debug-logfmt')('metascraper:find-rule')
+const condenseWhitespace = require('condense-whitespace').default
+const mime = require('mime').default
+const mimeExtension = mime.getExtension.bind(mime)
+const capitalize = require('microsoft-capitalize')
+const isRelativeUrl = require('is-relative-url').default
+const fileExtension = require('file-extension')
+const _normalizeUrl = require('normalize-url').default
+const { jsonrepair } = require('jsonrepair')
+const smartquotes = require('smartquotes')
+const { decodeHTML } = require('entities')
+const { iso6393To1: iso6393 } = require('iso-639-3/iso6393-to-1.js')
+const dataUri = require('data-uri-utils')
+const hasValues = require('has-values')
+const chrono = require('chrono-node')
+const isIso = require('isostring')
+const isUri = require('is-uri')
+const { URL } = require('url')
+const tldts = require('tldts')
+
+const METASCRAPER_RE2 = process.env.METASCRAPER_RE2
+  ? process.env.METASCRAPER_RE2 === 'true'
+  : undefined
+
+const urlRegexForTest = require('url-regex-safe')({
+  exact: true,
+  parens: true,
+  re2: METASCRAPER_RE2
+})
+
+const urlRegexForMatch = require('url-regex-safe')({
+  re2: METASCRAPER_RE2
+})
+
+const {
+  chain,
+  flow,
+  get,
+  invoke,
+  isBoolean,
+  isDate,
+  isEmpty,
+  isNumber,
+  isString,
+  lte,
+  memoize,
+  replace,
+  size,
+  toLower,
+  toString
+} = require('lodash')
+
+const iso6393Values = Object.values(iso6393)
+
+const parseUrl = memoize(tldts.parse)
+
+const toTitle = str =>
+  capitalize(str, [
+    'CLI',
+    'API',
+    'HTTP',
+    'HTTPS',
+    'JSX',
+    'DNS',
+    'URL',
+    'CI',
+    'CDN',
+    'package.json',
+    'GitHub',
+    'GitLab',
+    'CSS',
+    'JS',
+    'JavaScript',
+    'TypeScript',
+    'HTML',
+    'WordPress',
+    'JavaScript',
+    'Node.js'
+  ])
+
+const VIDEO = 'video'
+const AUDIO = 'audio'
+const IMAGE = 'image'
+const PDF = 'pdf'
+
+const imageExtensions = chain(require('image-extensions'))
+  .concat(['avif'])
+  .reduce((acc, ext) => {
+    acc[ext] = IMAGE
+    return acc
+  }, {})
+  .value()
+
+const audioExtensions = chain(require('audio-extensions'))
+  .concat(['mpga'])
+  .difference(['mp4'])
+  .reduce((acc, ext) => {
+    acc[ext] = AUDIO
+    return acc
+  }, {})
+  .value()
+
+const videoExtensions = chain(require('video-extensions').default)
+  .reduce((acc, ext) => {
+    acc[ext] = VIDEO
+    return acc
+  }, {})
+  .value()
+
+const EXTENSIONS = {
+  ...imageExtensions,
+  ...audioExtensions,
+  ...videoExtensions,
+  [PDF]: PDF
+}
+
+const REGEX_BY = /^[\s\n]*by[\s\n]+|@[\s\n]*/i
+
+const REGEX_LOCATION = /^[A-Z\s]+\s+[-—–]\s+/
+
+const REGEX_TITLE_SEPARATOR = /^[^|\-/•—]+/
+
+const REGEX_URL_TAB_OR_NEWLINE = /[\t\n\r]/g
+
+const AUTHOR_MAX_LENGTH = 128
+
+const removeLocation = value => replace(value, REGEX_LOCATION, '')
+
+const isUrl = (url, { relative = false } = {}) =>
+  relative ? isRelativeUrl(url) : urlRegexForTest.test(url)
+
+const urlObject = (...args) => {
+  try {
+    return new URL(...args)
+  } catch (_) {
+    return { toString: () => '' }
+  }
+}
+
+const absoluteUrl = (baseUrl, relativePath) => {
+  if (isEmpty(relativePath)) return urlObject(baseUrl).toString()
+  return urlObject(relativePath, baseUrl).toString()
+}
+
+// https://url.spec.whatwg.org/#scheme-state
+const protocol = url => {
+  if (!isString(url)) return ''
+  const { length } = url
+  let start = 0
+  while (start < length && url.charCodeAt(start) <= 0x20) start++
+  const head = url.charCodeAt(start)
+  let isLowerCased = head >= 0x61 && head <= 0x7a
+  if (!isLowerCased && !(head >= 0x41 && head <= 0x5a)) return ''
+  for (let index = start + 1; index < length; index++) {
+    const code = url.charCodeAt(index)
+    if (code === 0x3a) {
+      const scheme = url.slice(start, index)
+      return isLowerCased ? scheme : scheme.toLowerCase()
+    }
+    if (code >= 0x61 && code <= 0x7a) continue
+    if (code >= 0x41 && code <= 0x5a) {
+      isLowerCased = false
+      continue
+    }
+    if (code >= 0x30 && code <= 0x39) continue
+    if (code === 0x2b || code === 0x2d || code === 0x2e) continue
+    // `mai\tlto:a@b` declares `mailto`
+    if (code === 0x09 || code === 0x0a || code === 0x0d) {
+      return protocol(url.replace(REGEX_URL_TAB_OR_NEWLINE, ''))
+    }
+    return ''
+  }
+  return ''
+}
+
+/**
+ * `normalize-url` treats `+` as a space in query keys that have no `=`
+ * (CGI-style `?241+ful+HB1288+pdf`) and emits `%20`. Restore those pluses —
+ * they are delimiters, not encoded spaces.
+ *
+ * @param {string} original
+ * @param {string} normalized
+ * @returns {string}
+ */
+const restoreCgiPlus = (original, normalized) => {
+  const origMark = original.indexOf('?')
+  const normMark = normalized.indexOf('?')
+  if (origMark === -1 || normMark === -1) return normalized
+
+  const origHash = original.indexOf('#', origMark)
+  const origSearch = original.slice(
+    origMark + 1,
+    origHash === -1 ? undefined : origHash
+  )
+  if (!origSearch.includes('+')) return normalized
+
+  const origByEncoded = new Map()
+  for (const orig of origSearch.split('&')) {
+    if (!orig.includes('=') && orig.includes('+')) {
+      origByEncoded.set(orig.replaceAll('+', '%20'), orig)
+    }
+  }
+  if (origByEncoded.size === 0) return normalized
+
+  const normHash = normalized.indexOf('#', normMark)
+  const normSearch = normalized.slice(
+    normMark + 1,
+    normHash === -1 ? undefined : normHash
+  )
+  let changed = false
+  const restored = normSearch.split('&').map(norm => {
+    const orig = origByEncoded.get(norm)
+    if (!orig) return norm
+    changed = true
+    return orig
+  })
+  if (!changed) return normalized
+
+  const hash = normHash === -1 ? '' : normalized.slice(normHash)
+  return `${normalized.slice(0, normMark + 1)}${restored.join('&')}${hash}`
+}
+
+const sanetizeUrl = (url, opts) => {
+  const normalized = _normalizeUrl(url, {
+    stripWWW: false,
+    sortQueryParameters: false,
+    removeSingleSlash: false,
+    removeTrailingSlash: false,
+    ...opts
+  })
+  const queryStart = url.indexOf('?')
+  return queryStart !== -1 && url.indexOf('+', queryStart) !== -1
+    ? restoreCgiPlus(url, normalized)
+    : normalized
+}
+
+const normalizeUrl = (baseUrl, relativePath, opts) => {
+  try {
+    const absolute = absoluteUrl(baseUrl, relativePath)
+    // normalize-url v9 no longer rejects `javascript:` URLs; keep them out
+    if (protocol(absolute) === 'javascript') return undefined
+    return sanetizeUrl(absolute, opts)
+  } catch (_) {}
+}
+
+const removeBy = flow([
+  value => value.replace(REGEX_BY, ''),
+  condenseWhitespace
+])
+
+const removeSeparator = title =>
+  condenseWhitespace((REGEX_TITLE_SEPARATOR.exec(title) || [])[0] || title)
+
+const createTitle = flow([condenseWhitespace, smartquotes])
+
+const titleize = (src, opts = {}) => {
+  let title = createTitle(src)
+  if (opts.removeBy) title = removeBy(title)
+  if (opts.removeSeparator) title = removeSeparator(title)
+  if (opts.capitalize) title = toTitle(title)
+  return title
+}
+
+const $filter = ($, matchedEl, fn = $filter.fn) => {
+  let matched
+
+  matchedEl.each(function () {
+    const result = fn($(this))
+
+    if (result) {
+      matched = result
+      return false
+    }
+  })
+
+  return matched
+}
+
+$filter.fn = el => condenseWhitespace(el.text())
+
+const isAuthor = (str, opts = { relative: false }) =>
+  !isUrl(str, opts) &&
+  !isEmpty(str) &&
+  isString(str) &&
+  lte(size(str), AUTHOR_MAX_LENGTH)
+
+const getAuthor = (str, { removeBy = true, ...opts } = {}) =>
+  titleize(str, { removeBy, ...opts })
+
+const isExtension = (url, type, ext = extension(url)) =>
+  type === EXTENSIONS[ext]
+
+const isExtensionUrl = (url, type, { ext, ...opts } = {}) =>
+  isUrl(url, opts) && isExtension(url, type, ext)
+
+const createIsUrl = type => (url, opts) => isExtensionUrl(url, type, opts)
+
+const isVideoUrl = createIsUrl(VIDEO)
+
+const isAudioUrl = createIsUrl(AUDIO)
+
+const isImageUrl = createIsUrl(IMAGE)
+
+const isPdfUrl = createIsUrl(PDF)
+
+const isMediaUrl = (url, opts) =>
+  isImageUrl(url, opts) || isVideoUrl(url, opts) || isAudioUrl(url, opts)
+
+const isMediaExtension = url =>
+  isImageExtension(url) || isVideoExtension(url) || isAudioExtension(url)
+
+const createIsExtension = type => url => isExtension(url, type)
+
+const isVideoExtension = createIsExtension(VIDEO)
+
+const isAudioExtension = createIsExtension(AUDIO)
+
+const isImageExtension = createIsExtension(IMAGE)
+
+const isPdfExtension = createIsExtension(PDF)
+
+const isContentType =
+  extensions =>
+    ({ type = '' } = {}) =>
+      extensions.some(extension => type.endsWith(extension))
+
+const isVideoContentType = isContentType(Object.keys(videoExtensions))
+
+const isAudioContentType = isContentType(Object.keys(audioExtensions))
+
+const extension = (str = '') => {
+  const url = urlObject(
+    str,
+    isRelativeUrl(str) ? 'http://localhost' : undefined
+  )
+  url.hash = ''
+  url.search = ''
+  return fileExtension(url.toString())
+}
+
+const description = (value, opts) =>
+  isString(value) ? getDescription(value, opts) : undefined
+
+const getDescription = (
+  str,
+  { truncateLength = Number.MAX_SAFE_INTEGER, ellipsis = '…', ...opts } = {}
+) => {
+  let truncated = str.slice(0, truncateLength)
+  if (truncated.length < str.length) truncated = truncated.trim() + ellipsis
+  const description = removeLocation(truncated)
+  return titleize(description, opts).replace(/\s?\.\.\.?$/, ellipsis)
+}
+
+const publisher = value =>
+  isString(value) ? condenseWhitespace(value) : undefined
+
+const author = (value, opts) =>
+  isAuthor(value) ? getAuthor(value, opts) : undefined
+
+const url = (value, { url = '' } = {}) => {
+  if (!isString(value) || isEmpty(value)) return
+
+  try {
+    const absoluteUrl = normalizeUrl(url, value)
+    if (isUrl(absoluteUrl)) return absoluteUrl
+  } catch (_) {}
+
+  let sanitizedValue = value
+  if (value.startsWith('data:')) {
+    if (!dataUri.test(value)) return undefined
+    const [header, data] = value.split(',')
+    const cleanData = data.replace(/\s+/g, '')
+    sanitizedValue = `${header},${cleanData}`
+  }
+
+  return isUri(sanitizedValue) ? sanitizedValue : undefined
+}
+
+const getISODate = date =>
+  date && !Number.isNaN(date.getTime()) ? date.toISOString() : undefined
+
+const date = value => {
+  if (isDate(value)) return value.toISOString()
+  if (!(isString(value) || isNumber(value))) return
+
+  // remove whitespace for easier parsing
+  if (isString(value)) value = condenseWhitespace(value)
+
+  // convert isodates to restringify, because sometimes they are truncated
+  if (isIso(value)) return new Date(value).toISOString()
+
+  if (/^\d{4}$/.test(value)) return new Date(toString(value)).toISOString()
+
+  let isoDate
+
+  if (isString(value)) {
+    for (const item of value.split('\n').filter(Boolean)) {
+      const parsed = chrono.parseDate(item)
+      isoDate = getISODate(parsed)
+      if (isoDate) break
+    }
+  } else {
+    if (value >= 1e16 || value <= -1e16) {
+      // nanoseconds
+      value = Math.floor(value / 1000000)
+    } else if (value >= 1e14 || value <= -1e14) {
+      // microseconds
+      value = Math.floor(value / 1000)
+    } else if (!(value >= 1e11) || value <= -3e10) {
+      // seconds
+      value = value * 1000
+    }
+    isoDate = getISODate(new Date(value))
+  }
+
+  return isoDate
+}
+
+const lang = input => {
+  if (isEmpty(input) || !isString(input)) return
+  const key = toLower(condenseWhitespace(input))
+  if (input.length === 3) return iso6393[key]
+  const lang = toLower(key.substring(0, 2))
+  return iso6393Values.includes(lang) ? lang : undefined
+}
+
+const title = (value, { removeSeparator = false, ...opts } = {}) =>
+  isString(value) ? titleize(value, { removeSeparator, ...opts }) : undefined
+
+const isMime = (contentType, type) =>
+  type === get(EXTENSIONS, mimeExtension(contentType))
+
+const isSameHtmlDom = (newHtmlDom, oldHtmlDom) => newHtmlDom === oldHtmlDom
+
+memoizeOne.EqualityUrlAndHtmlDom = (newArgs, oldArgs) =>
+  newArgs[0] === oldArgs[0] && isSameHtmlDom(newArgs[1], oldArgs[1])
+
+memoizeOne.EqualityFirstArgument = (newArgs, oldArgs) =>
+  newArgs[0] === oldArgs[0]
+
+const parseJSON = text => {
+  try {
+    return JSON.parse(text)
+  } catch {
+    try {
+      return JSON.parse(jsonrepair(text))
+    } catch {
+      return undefined
+    }
+  }
+}
+
+const jsonld = memoizeOne(
+  $ =>
+    $('script[type="application/ld+json"]')
+      .map((_, element) => {
+        const el = $(element)
+        const text = $(el).contents().text()
+        const json = parseJSON(text)
+        if (!json) return false
+        const { '@graph': graph, ...props } = json
+        return Array.isArray(graph)
+          ? graph.map(item => ({ ...props, ...item }))
+          : graph
+            ? props
+            : json
+      })
+      .get()
+      .filter(Boolean),
+  (newArgs, oldArgs) => isSameHtmlDom(newArgs[0], oldArgs[0])
+)
+
+/**
+ * Recursive schema.org search with array traversal and object-to-name resolution.
+ * Returns array of primitive values (strings, numbers, booleans) for the given path.
+ */
+function searchSchemaResults (data, props, isExact) {
+  if (data === null || data === undefined) return []
+  if (
+    typeof data === 'string' ||
+    typeof data === 'number' ||
+    typeof data === 'boolean'
+  ) {
+    return props.length === 0 ? [data] : []
+  }
+  if (Array.isArray(data)) {
+    const current = props[0]
+    if (current && /^\[\d+\]$/.test(current)) {
+      const index = parseInt(current.slice(1, -1), 10)
+      if (data[index] !== undefined) {
+        return searchSchemaResults(data[index], props.slice(1), isExact)
+      }
+      return []
+    }
+    if (
+      props.length === 0 &&
+      data.every(item => typeof item === 'string' || typeof item === 'number')
+    ) {
+      return data.map(String)
+    }
+    return data.flatMap(item => searchSchemaResults(item, props, isExact))
+  }
+  if (typeof data === 'object') {
+    const [currentProp, ...rest] = props
+    if (!currentProp) {
+      if (data.name != null && typeof data.name === 'string') return [data.name]
+      return []
+    }
+    if (Object.prototype.hasOwnProperty.call(data, currentProp)) {
+      const result = searchSchemaResults(data[currentProp], rest, isExact)
+      if (result.length > 0) return result
+    }
+    if (!isExact) {
+      const nested = []
+      for (const key of Object.keys(data)) {
+        if (key.startsWith('@')) continue
+        nested.push(...searchSchemaResults(data[key], props, false))
+      }
+      return nested
+    }
+    return []
+  }
+  return []
+}
+
+const $jsonld = propName => $ => {
+  const collection = jsonld($)
+  const props = propName.split('.')
+  let value
+  let fallback
+
+  for (const item of collection) {
+    value = get(item, propName)
+    if (!isEmpty(value) || isNumber(value) || isBoolean(value)) break
+    if (value != null) continue
+    if (fallback !== undefined) continue
+    const exactResults = searchSchemaResults(item, props, true)
+    if (exactResults.length > 0) {
+      const filtered = exactResults.filter(v => v != null)
+      fallback = filtered.length > 1 ? filtered.join(' and ') : filtered[0]
+    } else {
+      const fuzzyResults = searchSchemaResults(item, props, false)
+      if (fuzzyResults.length > 0) {
+        fallback = fuzzyResults.find(v => v != null)
+      }
+    }
+  }
+
+  if (value == null && !isNumber(value) && !isBoolean(value)) {
+    value = fallback
+  }
+
+  return isString(value) ? decodeHTML(value) : value
+}
+
+const image = (value, opts) => {
+  const urlValue = url(value, opts)
+
+  const result =
+    urlValue !== undefined &&
+    !isAudioUrl(urlValue, opts) &&
+    !isVideoUrl(urlValue, opts)
+      ? urlValue
+      : undefined
+
+  if (!dataUri.test(result)) return result
+  const buffer = dataUri.toBuffer(dataUri.normalize(result))
+  return buffer.length ? result : undefined
+}
+
+const logo = image
+
+const media = (urlValidator, contentTypeValidator) => (value, opts) => {
+  const urlValue = url(value, opts)
+  return urlValidator(urlValue, opts) || contentTypeValidator(opts)
+    ? urlValue
+    : undefined
+}
+
+const video = media(isVideoUrl, isVideoContentType)
+
+const audio = media(isAudioUrl, isAudioContentType)
+
+const validator = {
+  audio,
+  author,
+  date,
+  description,
+  image,
+  lang,
+  logo,
+  publisher,
+  title,
+  url,
+  video
+}
+
+const truthyTest = () => true
+
+const isValidValue = async (value, args) => {
+  try {
+    return await args.validate(value, args, debug)
+  } catch (error) {
+    debug('validate:error', {
+      errorName: error?.name,
+      errorMessage: error?.message
+    })
+    return false
+  }
+}
+
+const findRule = async (rules, args = {}, propName) => {
+  let index = 0
+  let value
+  let hasValue = false
+  const validateArgs = args.validate ? { ...args, propName } : args
+
+  do {
+    const rule = rules[index++]
+    const test = rule.test || truthyTest
+    if (test(args)) {
+      const duration = debug.duration()
+      value = await rule(args)
+      hasValue = has(value)
+      const isRejected =
+        hasValue && args.validate && !(await isValidValue(value, validateArgs))
+      if (isRejected) {
+        value = undefined
+        hasValue = false
+      }
+      duration(
+        `${rule.pkgName}:${propName}:${index - 1}:${hasValue}${
+          isRejected ? ':rejected' : ''
+        }`
+      )
+    }
+  } while (!hasValue && index < rules.length)
+
+  return value
+}
+
+const toRule =
+  (mapper, opts) =>
+    rule =>
+      async ({ htmlDom, url }) => {
+        const value = await rule(htmlDom, url)
+        return mapper(value, { url, ...opts })
+      }
+
+const composeRule =
+  rule =>
+    ({ from, to = from, ...opts }) =>
+      async ({ htmlDom, url }) => {
+        const data = await rule(htmlDom, url)
+        const value = get(data, from)
+        return invoke(validator, to, value, { url, ...opts })
+      }
+
+const has = value =>
+  value !== undefined && !Number.isNaN(value) && hasValues(value)
+
+const getUrls = input => String(input).match(urlRegexForMatch) ?? []
+
+const htmlCache = new WeakMap()
+
+const getHtml = htmlDom => {
+  if (!htmlCache.has(htmlDom)) {
+    htmlCache.set(htmlDom, htmlDom.html())
+  }
+  return htmlCache.get(htmlDom)
+}
+
+const loadIframe = require('./load-iframe')
+
+const defaultGetIframe = (url, $, { src }) =>
+  loadIframe(url, $.load(`<iframe src="${src}"></iframe>`))
+
+const createGetIframeCached = getIframe => {
+  const cacheByHtmlDom = new WeakMap()
+
+  return async (url, $, src) => {
+    let cacheBySrc = cacheByHtmlDom.get($)
+    if (!cacheBySrc) {
+      cacheBySrc = new Map()
+      cacheByHtmlDom.set($, cacheBySrc)
+    }
+
+    const cachedHtmlDom = cacheBySrc.get(src)
+    if (cachedHtmlDom) return cachedHtmlDom
+
+    const pendingHtmlDom = getIframe(url, $, { src }).catch(error => {
+      cacheBySrc.delete(src)
+      throw error
+    })
+
+    cacheBySrc.set(src, pendingHtmlDom)
+    return pendingHtmlDom
+  }
+}
+
+const withIframe = (rules, getIframe, propName) => {
+  const probe = async (src, args) => {
+    try {
+      return await findRule(
+        rules,
+        { ...args, htmlDom: await getIframe(args.url, args.htmlDom, src) },
+        propName
+      )
+    } catch (_) {}
+  }
+
+  return rules.concat(async args => {
+    const { htmlDom: $, url } = args
+    const srcs = $('iframe[src^="http"], iframe[src^="/"]')
+      .map((_, el) => $(el).attr('src'))
+      .get()
+
+    if (srcs.length > 0) {
+      const seen = new Set()
+      for (const src of srcs) {
+        const normalized = normalizeUrl(url, src)
+        if (!normalized || seen.has(normalized)) continue
+        seen.add(normalized)
+        const value = await probe(normalized, args)
+        if (has(value)) return value
+      }
+    }
+
+    const twitter = $('meta[name="twitter:player"]').attr('content')
+    if (twitter) return probe(twitter, args)
+  })
+}
+
+module.exports = {
+  $filter,
+  $jsonld,
+  absoluteUrl,
+  audio,
+  audioExtensions,
+  author,
+  composeRule,
+  createGetIframeCached,
+  date,
+  defaultGetIframe,
+  description,
+  extension,
+  fileExtension,
+  findRule,
+  getHtml,
+  getUrls,
+  has,
+  image,
+  imageExtensions,
+  isAudioExtension,
+  isAudioUrl,
+  isAuthor,
+  isImageExtension,
+  isImageUrl,
+  isMediaExtension,
+  isMediaUrl,
+  isMime,
+  isPdfExtension,
+  isPdfUrl,
+  isString,
+  isUrl,
+  isVideoExtension,
+  isVideoUrl,
+  iso6393,
+  jsonld,
+  lang,
+  loadIframe,
+  logo,
+  memoizeOne,
+  mimeExtension,
+  normalizeUrl,
+  parseUrl,
+  protocol,
+  publisher,
+  sanetizeUrl,
+  title,
+  titleize,
+  toRule,
+  url,
+  validator,
+  video,
+  videoExtensions,
+  withIframe
+}

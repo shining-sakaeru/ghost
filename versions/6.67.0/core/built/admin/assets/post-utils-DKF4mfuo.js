@@ -1,0 +1,1 @@
+function e(e){let t=e?.status===`published`,n=e?.status===`sent`,r=!!e?.email,i=e?.email?.status!==`failed`,a=typeof e?.email?.email_count==`number`&&e.email.email_count>0;return(n||t)&&r&&(i||a)}function t(e){let t=e.open_rate!==null;return e.status===`sent`?`Email only`:e.status===`published`?t?`Published and sent`:`Published`:e.status}export{e as n,t};

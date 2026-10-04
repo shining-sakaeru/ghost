@@ -1,0 +1,48 @@
+import { join } from 'node:path';
+const htmlUnescapeMap = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'" };
+const htmlUnescapeRegex = /&(?:amp|lt|gt|quot|#39);/g;
+/**
+ * Unescape HTML entities (&amp; &lt; &gt; &quot; &#39;) back to literal characters.
+ */
+export const unescapeHTML = (str) => str.replace(htmlUnescapeRegex, match => htmlUnescapeMap[match]);
+/**
+ * Convert a slug or hyphenated string to title case.
+ * 'hello-world' → 'Hello World'
+ */
+export const startCase = (str) => str.replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+/**
+ * Convert a string to kebab-case.
+ * 'Hello World' → 'hello-world'
+ */
+export const kebabCase = (str) => str
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
+/**
+ * Strip HTML tags and normalize whitespace.
+ * '<p>Hello <b>world</b></p>' → 'Hello world'
+ */
+export const stripHtml = (html) => {
+    // Strip tags repeatedly: a single pass can leave a valid tag behind when
+    // markup is nested (e.g. `<scr<script>ipt>`), so loop until stable.
+    let text = html;
+    let previous;
+    do {
+        previous = text;
+        text = text.replace(/<[^>]+>/g, '');
+    } while (text !== previous);
+    return text.replace(/\r?\n|\r/g, ' ').trim();
+};
+/**
+ * Strip protocol and query parameters from a URL, returning host/path.
+ * 'https://example.com/my-post/?ref=home' → 'example.com/my-post/'
+ */
+export const cleanURL = (url) => {
+    try {
+        const urlParts = new URL(url);
+        return join(urlParts.host, urlParts.pathname);
+    }
+    catch {
+        return url;
+    }
+};

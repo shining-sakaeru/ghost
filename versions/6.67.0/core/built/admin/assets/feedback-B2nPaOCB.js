@@ -1,0 +1,1 @@
+import{i as e}from"./hooks-S_ZSPWiW.js";var t=`FeedbackResponseType`,n=e({dataType:t,path:e=>`/feedback/${e}/`});export{n,t};

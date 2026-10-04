@@ -1,0 +1,90 @@
+{
+  "name": "knex-migrator",
+  "version": "6.2.1",
+  "description": "Database migrations with knex.",
+  "keywords": [
+    "ghost",
+    "migration",
+    "knex",
+    "knex-migrations",
+    "knex migration",
+    "knex migrations",
+    "bookshelf migration",
+    "bookshelf"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/knex-migrator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TryGhost/knex-migrator/issues"
+  },
+  "homepage": "https://github.com/TryGhost/knex-migrator#readme",
+  "author": {
+    "name": "Ghost Foundation",
+    "email": "hello@ghost.org",
+    "web": "https://ghost.org"
+  },
+  "main": "lib",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "bin": {
+    "knex-migrator": "./bin/knex-migrator",
+    "knex-migrator-init": "./bin/knex-migrator-init",
+    "knex-migrator-health": "./bin/knex-migrator-health",
+    "knex-migrator-migrate": "./bin/knex-migrator-migrate",
+    "knex-migrator-reset": "./bin/knex-migrator-reset",
+    "knex-migrator-rollback": "./bin/knex-migrator-rollback"
+  },
+  "engines": {
+    "node": "^22.13.1 || ^24.14.1"
+  },
+  "dependencies": {
+    "@tryghost/database-info": "^2.3.14",
+    "@tryghost/errors": "^3.3.14",
+    "@tryghost/logging": "^5.4.5",
+    "commander": "^15.0.0",
+    "debug": "^4.4.3",
+    "mysql2": "^3.24.4",
+    "semver": "^7.8.5"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "migrations",
+    "loggingrc.js"
+  ],
+  "peerDependencies": {
+    "knex": "^2.4.2 || ^3.0.0"
+  },
+  "devDependencies": {
+    "@tryghost/pro-ship": "1.1.9",
+    "@types/node": "22.20.3",
+    "@vitest/coverage-v8": "5.0.0",
+    "knex": "3.3.0",
+    "knex2": "npm:knex@2.4.2",
+    "nconf": "0.13.0",
+    "oxfmt": "0.67.0",
+    "oxlint": "1.82.0",
+    "rimraf": "6.1.3",
+    "sinon": "22.1.0",
+    "typescript": "7.0.2",
+    "vitest": "5.0.0"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^12.11.1"
+  },
+  "scripts": {
+    "lint": "oxlint --quiet && oxfmt --check . && pnpm lint:types",
+    "lint:fix": "oxlint --fix && oxfmt .",
+    "lint:types": "tsc -p test/types",
+    "format": "oxfmt .",
+    "test": "LEVEL=fatal vitest run",
+    "test:unit": "pnpm lint && LEVEL=fatal vitest run test/unit",
+    "smoke:ghost": "node scripts/ghost-consumer-smoke.js",
+    "posttest": "pnpm lint",
+    "coverage": "LEVEL=fatal vitest run --coverage",
+    "preship": "pnpm test",
+    "ship": "pro-ship"
+  }
+}

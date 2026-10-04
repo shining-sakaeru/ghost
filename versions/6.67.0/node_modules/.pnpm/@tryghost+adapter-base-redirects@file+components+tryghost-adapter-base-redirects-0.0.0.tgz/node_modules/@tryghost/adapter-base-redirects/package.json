@@ -1,0 +1,38 @@
+{
+  "name": "@tryghost/adapter-base-redirects",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The adapter-base-redirects package for Ghost.",
+  "license": "MIT",
+  "author": "Ghost Foundation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/Ghost.git",
+    "directory": "packages/adapters/redirects-base"
+  },
+  "files": [
+    "build"
+  ],
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    }
+  },
+  "dependencies": {},
+  "ghostPackage": {
+    "goldenPath": "compliant"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test:unit": "NODE_ENV=testing vitest run --coverage",
+    "test": "pnpm run '/^test:/'",
+    "test:types": "tsc --noEmit -p test/tsconfig.json",
+    "lint:code": "eslint src/ --cache",
+    "lint:test": "eslint test/ --cache",
+    "lint": "pnpm run '/^lint:/'"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@tryghost/config-url-helpers",
+  "version": "1.0.28",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/SDK.git",
+    "directory": "packages/config-url-helpers"
+  },
+  "author": "Ghost Foundation",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "dev": "echo \"Implement me!\"",
+    "test": "NODE_ENV=testing c8 --reporter text --reporter cobertura mocha './test/**/*.test.js'",
+    "coverage": "c8 report -r html",
+    "lint": "eslint . --ext .js --cache",
+    "posttest": "yarn lint"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "c8": "12.0.0",
+    "mocha": "12.0.0",
+    "should": "13.2.3",
+    "sinon": "22.1.0"
+  },
+  "gitHead": "660bda9609a563bc9e6aab299d3604bcfe2b59a7"
+}

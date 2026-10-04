@@ -1,0 +1,30 @@
+{
+  "name": "@extractus/oembed-extractor",
+  "version": "6.0.0",
+  "description": "Get oEmbed data from given URL.",
+  "author": "@extractus",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/extractus/oembed-extractor.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/extractus/oembed-extractor/issues"
+  },
+  "main": "./script/mod.js",
+  "module": "./esm/mod.js",
+  "exports": {
+    ".": {
+      "import": "./esm/mod.js",
+      "require": "./script/mod.js"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "linkedom": "^0.18.13"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0"
+  },
+  "_generatedBy": "dnt@0.43.2"
+}

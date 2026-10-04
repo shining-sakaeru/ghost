@@ -1,0 +1,1 @@
+{"version":3,"file":"remove-alignment.d.ts","sourceRoot":"","sources":["../../../src/transforms/remove-alignment.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,WAAW,EAAE,KAAK,EAAE,aAAa,EAAE,MAAM,SAAS,CAAC;AAGjE,wBAAgB,wBAAwB,CAAC,IAAI,EAAE,WAAW,QAKzD;AAGD,wBAAgB,gCAAgC,CAAC,CAAC,SAAS,WAAW,EACpE,MAAM,EAAE,aAAa,EACrB,KAAK,EAAE,KAAK,CAAC,CAAC,CAAC,cAOhB"}

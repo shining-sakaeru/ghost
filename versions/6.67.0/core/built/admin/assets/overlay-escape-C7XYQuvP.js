@@ -1,0 +1,1 @@
+var e=(e,t)=>{t?.(e),e.defaultPrevented||e.stopPropagation()};export{e as t};

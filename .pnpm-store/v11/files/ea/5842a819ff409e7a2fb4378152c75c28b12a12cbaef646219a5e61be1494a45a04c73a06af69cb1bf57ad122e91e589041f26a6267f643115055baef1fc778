@@ -1,0 +1,40 @@
+{
+  "name": "@tryghost/mongo-knex",
+  "version": "0.11.2",
+  "description": "tbc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/NQL.git",
+    "directory": "packages/mongo-knex"
+  },
+  "author": "Ghost Foundation",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .js --cache",
+    "posttest": "yarn lint",
+    "test": "yarn test-unit && yarn test-integration --timeout 10000",
+    "test-unit": "c8 --all --reporter text --reporter html --reporter cobertura mocha ./test/unit/*.test.js --exit",
+    "test-integration": "mocha ./test/integration/*.test.js --exit"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "better-sqlite3": "13.0.3",
+    "bluebird": "3.7.2",
+    "c8": "12.0.0",
+    "eslint": "8.57.1",
+    "eslint-plugin-ghost": "3.5.0",
+    "knex": "3.3.0",
+    "mocha": "11.8.0",
+    "mysql2": "3.23.3",
+    "nconf": "0.13.0",
+    "should": "13.2.3",
+    "sinon": "22.1.0"
+  },
+  "dependencies": {
+    "debug": "4.4.3",
+    "lodash": "4.18.1"
+  }
+}

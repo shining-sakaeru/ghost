@@ -1,0 +1,56 @@
+{
+  "name": "@tryghost/metafield-types",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared catalog of member metafield types: storage routing and value validation, consumed by Ghost core and admin",
+  "license": "MIT",
+  "author": "Ghost Foundation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/Ghost.git",
+    "directory": "packages/metafield-types"
+  },
+  "files": [
+    "build"
+  ],
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./csv": {
+      "types": "./build/csv.d.ts",
+      "default": "./build/csv.js"
+    },
+    "./structure": {
+      "types": "./build/structure.d.ts",
+      "default": "./build/structure.js"
+    },
+    "./identity": {
+      "types": "./build/identity.d.ts",
+      "default": "./build/identity.js"
+    },
+    "./countries": {
+      "types": "./build/countries.d.ts",
+      "default": "./build/countries.js"
+    }
+  },
+  "dependencies": {
+    "zod": "4.4.3"
+  },
+  "ghostPackage": {
+    "goldenPath": "compliant"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test:unit": "NODE_ENV=testing vitest run --coverage",
+    "test": "pnpm run '/^test:/'",
+    "test:types": "tsc --noEmit -p test/tsconfig.json",
+    "lint:code": "eslint src/ --cache",
+    "lint:test": "eslint test/ --cache",
+    "lint": "pnpm run '/^lint:/'"
+  }
+}

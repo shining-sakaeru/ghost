@@ -1,0 +1,1 @@
+{"version":3,"file":"destinations.d.ts","sourceRoot":"","sources":["../src/destinations.ts"],"names":[],"mappings":"AAGA;;;;;;;;GAQG;AACH,eAAO,MAAM,UAAU;;iBACJ,GAAG,EAAE,eAAe;iBAAE,IAAI,EAAE,eAAe;iBAAE,IAAI,EAAE,YAAY;;;iBAC5D,GAAG,EAAE,kBAAkB;iBAAE,IAAI,EAAE,kBAAkB;iBAAE,IAAI,EAAE,SAAS;;;iBAC7E,GAAG,EAAE,gBAAgB;iBAAE,IAAI,EAAE,gBAAgB;iBAAE,IAAI,EAAE,YAAY;;CACW,CAAC"}

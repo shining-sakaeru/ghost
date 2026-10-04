@@ -1,0 +1,31 @@
+{
+  "name": "@tryghost/social-urls",
+  "version": "0.1.64",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/SDK.git",
+    "directory": "packages/social-urls"
+  },
+  "author": "Ghost Foundation",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "dev": "echo \"Implement me!\"",
+    "test": "NODE_ENV=testing c8 --reporter text --reporter cobertura mocha './test/**/*.test.js'",
+    "lint": "eslint . --ext .js --cache",
+    "posttest": "yarn lint"
+  },
+  "files": [
+    "lib/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "c8": "12.0.0",
+    "mocha": "12.0.0",
+    "should": "13.2.3",
+    "sinon": "22.1.0"
+  },
+  "gitHead": "660bda9609a563bc9e6aab299d3604bcfe2b59a7"
+}

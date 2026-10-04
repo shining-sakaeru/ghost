@@ -1,0 +1,1 @@
+import{_ as e}from"./chunk-OB3PAWPO-CEq-4KPv.js";var t=()=>{let[t]=e();return{getParam:e=>t.get(e)}};export{t};

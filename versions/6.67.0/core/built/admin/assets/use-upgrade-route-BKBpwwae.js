@@ -1,0 +1,1 @@
+import{o as e}from"./config-ByzXp8fN.js";import{n as t}from"./global-data-context-3MItMry2.js";function n(){let{config:n}=t();return e(n)}export{n as t};

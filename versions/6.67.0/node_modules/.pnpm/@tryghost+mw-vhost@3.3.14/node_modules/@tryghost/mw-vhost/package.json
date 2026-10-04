@@ -1,0 +1,27 @@
+{
+  "name": "@tryghost/mw-vhost",
+  "version": "3.3.14",
+  "license": "MIT",
+  "author": "Ghost Foundation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/framework.git",
+    "directory": "packages/mw-vhost"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "supertest": "7.2.2"
+  },
+  "scripts": {
+    "dev": "echo \"Implement me!\"",
+    "test": "NODE_ENV=testing vitest run --coverage",
+    "lint": "oxlint -c ../../.oxlintrc.json ."
+  }
+}

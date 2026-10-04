@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BlNNh7jY.js";import{t}from"./posts-list-screen-BGYa-iLX.js";var n=e();function r(){return(0,n.jsx)(t,{resource:`pages`})}export{r as default};

@@ -1,0 +1,44 @@
+{
+  "name": "@tryghost/api-framework",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "Ghost Foundation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/Ghost.git",
+    "directory": "packages/api-framework"
+  },
+  "files": [
+    "build"
+  ],
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    }
+  },
+  "dependencies": {
+    "@tryghost/debug": "2.3.14",
+    "@tryghost/errors": "3.3.14",
+    "@tryghost/promise": "2.3.14",
+    "@tryghost/tpl": "2.3.14",
+    "@tryghost/validator": "3.2.14",
+    "lodash": "4.18.1"
+  },
+  "ghostPackage": {
+    "goldenPath": "compliant"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test:unit": "NODE_ENV=testing vitest run --coverage",
+    "test:types": "tsc --noEmit -p test/tsconfig.json",
+    "test": "pnpm run '/^test:/'",
+    "lint:code": "eslint src/ --cache",
+    "lint:test": "eslint test/ --cache",
+    "lint": "pnpm run '/^lint:/'"
+  }
+}

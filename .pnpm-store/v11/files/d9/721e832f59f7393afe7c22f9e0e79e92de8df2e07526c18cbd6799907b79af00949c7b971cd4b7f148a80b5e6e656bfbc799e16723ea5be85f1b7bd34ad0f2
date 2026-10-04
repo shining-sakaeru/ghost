@@ -1,0 +1,59 @@
+{
+  "name": "metascraper",
+  "description": "Scrape metadata from any URL using Open Graph, JSON-LD, HTML meta tags, and smart fallbacks.",
+  "homepage": "https://metascraper.js.org",
+  "version": "5.55.2",
+  "types": "src/index.d.ts",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microlinkhq/metascraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/microlinkhq/metascraper/issues"
+  },
+  "keywords": [
+    "article",
+    "cheerio",
+    "extract",
+    "html",
+    "json-ld",
+    "metadata",
+    "metascraper",
+    "og",
+    "open-graph",
+    "preview",
+    "scraper",
+    "unfurl"
+  ],
+  "dependencies": {
+    "@metascraper/helpers": "5.55.2",
+    "cheerio": "~1.2.0",
+    "debug-logfmt": "~1.4.12",
+    "whoops": "~5.1.2"
+  },
+  "devDependencies": {
+    "ava": "8",
+    "tsd": "latest"
+  },
+  "engines": {
+    "node": ">= 22"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "lint": "tsd",
+    "pretest": "npm run lint",
+    "test": "NODE_PATH=.. TZ=UTC ava"
+  },
+  "license": "MIT",
+  "ava": {
+    "timeout": "30s",
+    "failFast": true
+  },
+  "tsd": {
+    "directory": "test/types"
+  },
+  "gitHead": "d55833693c1b1736bbc56e0d477b1135871837c6"
+}

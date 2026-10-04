@@ -1,0 +1,1 @@
+{"version":3,"file":"file-parser.d.ts","sourceRoot":"","sources":["../../../../src/nodes/file/file-parser.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAC,WAAW,EAAC,MAAM,SAAS,CAAC;AAGzC,wBAAgB,aAAa,CAAC,QAAQ,EAAE,KAAK,IAAI,EAAE,MAAM,CAAC,MAAM,EAAE,OAAO,CAAC,KAAK,WAAW;IAElF,GAAG,aAAa,WAAW;4BAIK,WAAW;;;kBAkBrB,CAAC;;EAM9B"}

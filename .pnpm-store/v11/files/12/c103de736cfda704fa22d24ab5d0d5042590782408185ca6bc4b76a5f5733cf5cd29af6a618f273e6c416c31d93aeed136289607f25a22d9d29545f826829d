@@ -1,0 +1,61 @@
+{
+  "name": "metascraper-logo-favicon",
+  "description": "Metascraper logo fallback that picks favicons and apple-touch icons from HTML.",
+  "homepage": "https://github.com/microlinkhq/metascraper/packages/metascraper-logo-favicon",
+  "version": "5.55.2",
+  "types": "src/index.d.ts",
+  "main": "src/index.js",
+  "author": {
+    "email": "hello@microlink.io",
+    "name": "microlink.io",
+    "url": "https://microlink.io"
+  },
+  "repository": {
+    "directory": "packages/metascraper-logo-favicon",
+    "type": "git",
+    "url": "git+https://github.com/microlinkhq/metascraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/microlinkhq/metascraper/issues"
+  },
+  "keywords": [
+    "apple-touch-icon",
+    "brand",
+    "extract",
+    "favicon",
+    "html",
+    "icon",
+    "logo",
+    "metadata",
+    "metascraper",
+    "scraper"
+  ],
+  "dependencies": {
+    "@keyvhq/memoize": "~2.2.4",
+    "@metascraper/helpers": "5.55.2",
+    "lodash": "~4.18.1",
+    "reachable-url": "~2.1.0"
+  },
+  "devDependencies": {
+    "async-listen": "latest",
+    "ava": "8",
+    "got": "11"
+  },
+  "engines": {
+    "node": ">= 22"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "NODE_PATH=.. TZ=UTC ava --timeout 15s"
+  },
+  "license": "MIT",
+  "ava": {
+    "files": [
+      "test/**/*.js",
+      "!test/helpers.js"
+    ]
+  },
+  "gitHead": "d55833693c1b1736bbc56e0d477b1135871837c6"
+}

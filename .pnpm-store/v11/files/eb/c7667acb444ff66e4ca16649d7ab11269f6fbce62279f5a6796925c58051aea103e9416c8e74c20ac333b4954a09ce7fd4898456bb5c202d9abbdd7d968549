@@ -1,0 +1,258 @@
+const path = require('path');
+const fs = require('fs');
+const semver = require('semver');
+const debug = require('debug')('knex-migrator:utils');
+const errors = require('./errors');
+
+/**
+ * @description Migration versions are loose (`1`, `1.1`, `1.1-members`), so coerce them to semver.
+ * Returns null when the value does not contain a version number.
+ */
+function coerceVersion(version) {
+    return semver.coerce(String(version));
+}
+
+/**
+ * @description The config file basenames we look for, in resolution order.
+ *
+ * `.mjs` and `.cjs` are supported alongside the historical `.js`. ESM configs
+ * are loaded synchronously via `require()` (Node >= 22.13 / >= 24), so they must
+ * not use top-level await.
+ */
+const CONFIG_FILENAMES = ['MigratorConfig.js', 'MigratorConfig.cjs', 'MigratorConfig.mjs'];
+
+/**
+ * @description Unwrap the config from a loaded module.
+ *
+ * `require()`-ing an ESM module (a `.mjs` file, or a `.js`/`.cjs` file in a
+ * `"type": "module"` package) returns a Module namespace object whose config
+ * lives on the `default` export. CommonJS modules return `module.exports`
+ * directly.
+ *
+ * @param {*} loaded
+ * @returns {*}
+ */
+function interopConfig(loaded) {
+    if (loaded && loaded[Symbol.toStringTag] === 'Module' && 'default' in loaded) {
+        return loaded.default;
+    }
+
+    return loaded;
+}
+
+/**
+ * @description This helper function offers two ways of loading the knex-migrator configuration.
+ *
+ * 1. via JS object
+ * 2. via file location (`MigratorConfig.js`, `MigratorConfig.cjs`, or `MigratorConfig.mjs`)
+ *
+ * The expected format is:
+ *
+ * {
+ *   database: Object,
+ *   migrationPath: String,
+ *   currentVersion: String
+ * }
+ *
+ * @param {Object} options
+ * @returns {*}
+ */
+module.exports.loadConfig = function loadConfig(options) {
+    if (options.knexMigratorConfig) {
+        return options.knexMigratorConfig;
+    }
+
+    const knexMigratorFilePath = path.resolve(options.knexMigratorFilePath || process.cwd());
+    let resolvedConfigPath;
+
+    for (const filename of CONFIG_FILENAMES) {
+        try {
+            resolvedConfigPath = require.resolve(path.join(knexMigratorFilePath, filename));
+            break;
+        } catch (err) {
+            // CASE: this candidate does not exist, try the next one.
+            if (err.code === 'MODULE_NOT_FOUND') {
+                continue;
+            }
+
+            throw new errors.KnexMigrateError({ err: err });
+        }
+    }
+
+    if (!resolvedConfigPath) {
+        throw new errors.KnexMigrateError({
+            message:
+                'Please provide a file named MigratorConfig.js, MigratorConfig.cjs, or MigratorConfig.mjs in your project root.',
+            help: 'Read through the README.md to see which values are expected.',
+        });
+    }
+
+    try {
+        return interopConfig(require(resolvedConfigPath));
+    } catch (err) {
+        throw new errors.KnexMigrateError({ err: err });
+    }
+};
+
+/**
+ * @description List all migration files from disk based on a path.
+ *
+ * @param absolutePath
+ * @returns {Array}
+ */
+exports.listFiles = function listFiles(absolutePath) {
+    let files = [];
+
+    try {
+        files = fs.readdirSync(absolutePath);
+    } catch {
+        throw new errors.KnexMigrateError({
+            code: 'MIGRATION_PATH',
+            message: 'MigrationPath is wrong: ' + absolutePath,
+        });
+    }
+
+    files = files.filter((file) => {
+        // CASE: ignore dot files
+        return !file.match(/^\./);
+    });
+
+    debug(files);
+    return files;
+};
+
+/**
+ * @description Reads all migration files from disk based on a path.
+ * It returns an Array of migration files including it's up/down hooks, config and the name.
+ *
+ * @param absolutePath
+ * @returns {Array}
+ */
+exports.readTasks = function readTasks(absolutePath) {
+    const files = exports.listFiles(absolutePath);
+    const tasks = files.map((file) => {
+        const executeFn = require(path.join(absolutePath, file));
+
+        try {
+            return {
+                up: executeFn.up,
+                down: executeFn.down,
+                config: executeFn.config,
+                name: file,
+            };
+        } catch (err) {
+            debug(err.message);
+
+            throw new errors.MigrationScript({
+                message: err.message,
+                help: 'Cannot load Migrationscript.',
+                context: file,
+            });
+        }
+    });
+
+    debug(tasks);
+    return tasks;
+};
+
+/**
+ * @description Reads all version folders from disk in correct order.
+ *
+ * @param absolutePath
+ * @returns {*}
+ */
+exports.readVersionFolders = function readFolders(absolutePath) {
+    let folders = [];
+    const toReturn = [];
+
+    try {
+        folders = fs.readdirSync(absolutePath);
+    } catch {
+        throw new errors.KnexMigrateError({
+            message: 'MigrationPath is wrong: ' + absolutePath,
+            code: 'READ_FOLDERS',
+        });
+    }
+
+    if (!folders.length) {
+        return folders;
+    }
+
+    folders.forEach((folderToAdd) => {
+        let index = null;
+
+        // CASE: ignore dot files
+        if (folderToAdd.match(/^\./)) {
+            debug('Ignore Dotfile: ' + folderToAdd);
+            return;
+        }
+
+        const versionToAdd = coerceVersion(folderToAdd);
+
+        toReturn.forEach((existingElement, _index) => {
+            if (index !== null) {
+                return;
+            }
+
+            const existingVersion = coerceVersion(existingElement);
+
+            // CASE: folder to add is smaller, push before this element
+            if (versionToAdd && existingVersion && semver.lt(versionToAdd, existingVersion)) {
+                index = _index;
+            }
+        });
+
+        if (index === null) {
+            if (!toReturn.length) {
+                index = 0;
+            } else {
+                index = toReturn.length;
+            }
+        }
+
+        toReturn.splice(index, 0, folderToAdd);
+    });
+
+    debug(toReturn);
+    return toReturn;
+};
+
+/**
+ * @description Auto detect local installation to avoid version incompatible behaviour
+ */
+exports.getKnexMigrator = async function getKnexMigrator(options) {
+    options = options || {};
+
+    try {
+        const localCLIPath = require.resolve('knex-migrator', {
+            paths: [path.resolve(options.path)],
+        });
+        return require(localCLIPath);
+    } catch {
+        return require('./');
+    }
+};
+
+/**
+ * @description A helper function to figure out if a version is greater than another version.
+ *
+ * Valid versions are:
+ * - 1
+ * - 1.1
+ * - 1.1.0
+ *
+ * It's up to you which pattern you would like to use.
+ *
+ * @param options
+ * @returns {boolean}
+ */
+exports.isGreaterThanVersion = function isGreaterThanVersion(options) {
+    const greaterVersion = coerceVersion(options.greaterVersion);
+    const smallerVersion = coerceVersion(options.smallerVersion);
+
+    if (!greaterVersion || !smallerVersion) {
+        return false;
+    }
+
+    return semver.gt(greaterVersion, smallerVersion);
+};

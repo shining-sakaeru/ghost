@@ -1,0 +1,1 @@
+import{n as e,r as t}from"./hooks-S_ZSPWiW.js";import{Dn as n}from"./index-3ttb1yyZ.js";var r=`LinkResponseType`,i=t({dataType:r,path:`/links/`}),a=e({method:`PUT`,path:()=>`/links/bulk/`,body:({editedUrl:e})=>({bulk:{action:`updateLink`,meta:{link:{to:e}}}}),searchParams:({originalUrl:e,postId:t})=>({filter:`post_id:${n(t)}+to:${n(e)}`})});export{a as n,i as r,r as t};

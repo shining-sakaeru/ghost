@@ -1,0 +1,9 @@
+{
+    "database": {
+        "client": "better-sqlite3",
+        "useNullAsDefault": true,
+        "connection": {
+            "filename": "./test.db"
+        }
+    }
+}

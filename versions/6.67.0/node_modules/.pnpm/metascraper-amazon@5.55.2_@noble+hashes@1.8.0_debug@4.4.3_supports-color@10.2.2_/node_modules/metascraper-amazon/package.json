@@ -1,0 +1,50 @@
+{
+  "name": "metascraper-amazon",
+  "description": "Metascraper rules tailored for Amazon pages — richer metadata than generic HTML parsers.",
+  "homepage": "https://github.com/microlinkhq/metascraper/packages/metascraper-amazon",
+  "version": "5.55.2",
+  "types": "src/index.d.ts",
+  "main": "src/index.js",
+  "author": {
+    "email": "hello@microlink.io",
+    "name": "microlink.io",
+    "url": "https://microlink.io"
+  },
+  "repository": {
+    "directory": "packages/metascraper-amazon",
+    "type": "git",
+    "url": "git+https://github.com/microlinkhq/metascraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/microlinkhq/metascraper/issues"
+  },
+  "keywords": [
+    "amazon",
+    "asin",
+    "ecommerce",
+    "extract",
+    "html",
+    "metadata",
+    "metascraper",
+    "preview",
+    "product",
+    "scraper"
+  ],
+  "dependencies": {
+    "@metascraper/helpers": "5.55.2"
+  },
+  "devDependencies": {
+    "ava": "8"
+  },
+  "engines": {
+    "node": ">= 22"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "NODE_PATH=.. TZ=UTC ava --timeout 15s"
+  },
+  "license": "MIT",
+  "gitHead": "d55833693c1b1736bbc56e0d477b1135871837c6"
+}

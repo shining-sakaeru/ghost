@@ -1,0 +1,1 @@
+function e(e,t,n=!1){let r;return function(...i){let a=()=>{r=null,n||e.apply(this,i)},o=n&&!r;r&&clearTimeout(r),r=setTimeout(a,t),o&&e.apply(this,i)}}export{e as t};

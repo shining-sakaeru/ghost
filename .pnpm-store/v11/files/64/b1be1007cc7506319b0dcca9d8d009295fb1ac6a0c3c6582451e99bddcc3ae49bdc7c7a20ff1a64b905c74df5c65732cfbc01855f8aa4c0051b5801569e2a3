@@ -1,0 +1,1 @@
+{"version":3,"file":"paywall.js","sourceRoot":"","sources":["../../../src/cards/paywall.ts"],"names":[],"mappings":"AAEA,MAAM,WAAW,GAAS;IACxB,IAAI,EAAE,SAAS;IACf,IAAI,EAAE,KAAK;IAEX,MAAM,CAAC,EAAE,GAAG,EAAE,EAAE,GAAG,EAAE,EAAE;QACrB,OAAO,GAAG,CAAC,aAAa,CAAC,cAAc,CAAC,CAAC;IAC3C,CAAC;CACF,CAAC;AAEF,eAAe,WAAW,CAAC"}

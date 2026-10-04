@@ -1,0 +1,1 @@
+function e(e){window.history.replaceState(null,``,`#${e}`),window.location.reload()}export{e as t};

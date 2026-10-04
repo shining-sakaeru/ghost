@@ -1,0 +1,42 @@
+{
+  "name": "@tryghost/limit-service",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/Ghost.git",
+    "directory": "packages/limit-service"
+  },
+  "author": "Ghost Foundation",
+  "license": "MIT",
+  "main": "build/index.js",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    }
+  },
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "@tryghost/errors": "3.3.14",
+    "lodash": "4.18.1",
+    "luxon": "3.7.2"
+  },
+  "private": true,
+  "ghostPackage": {
+    "goldenPath": "compliant"
+  },
+  "type": "module",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "test:unit": "NODE_ENV=testing vitest run --coverage",
+    "test:types": "tsc --noEmit -p test/tsconfig.json",
+    "test": "pnpm run '/^test:/'",
+    "lint:code": "eslint src/ --cache",
+    "lint:test": "eslint test/ --cache",
+    "lint": "pnpm run '/^lint:/'"
+  }
+}

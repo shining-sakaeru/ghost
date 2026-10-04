@@ -1,0 +1,57 @@
+{
+  "name": "@tryghost/brute-knex",
+  "version": "3.2.2",
+  "description": "A Knex.js store for express-brute",
+  "keywords": [
+    "express",
+    "brute",
+    "knex"
+  ],
+  "license": "ISC",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20.20.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:TryGhost/brute-knex.git"
+  },
+  "devDependencies": {
+    "@tryghost/pro-ship": "1.1.7",
+    "@vitest/coverage-v8": "4.1.10",
+    "mysql2": "3.23.2",
+    "oxfmt": "0.61.0",
+    "oxlint": "1.76.0",
+    "pg": "8.22.0",
+    "sqlite3": "6.0.1",
+    "typescript": "7.0.2",
+    "vitest": "4.1.10"
+  },
+  "dependencies": {
+    "express-brute": "1.0.1",
+    "knex": "2.4.2"
+  },
+  "scripts": {
+    "format": "oxfmt .",
+    "lint": "oxlint --quiet && oxfmt --check . && pnpm run test:types",
+    "lint:fix": "oxlint --fix && oxfmt .",
+    "preship": "pnpm lint && pnpm test",
+    "ship": "pro-ship",
+    "test": "vitest run --coverage",
+    "test:e2e:sqlite": "BRUTE_KNEX_DIALECTS=sqlite vitest run --coverage",
+    "test:e2e:mysql": "BRUTE_KNEX_DIALECTS=mysql vitest run --coverage",
+    "test:e2e:postgres": "BRUTE_KNEX_DIALECTS=postgres vitest run --coverage",
+    "test:types": "tsc --noEmit -p tsconfig.types.json"
+  }
+}

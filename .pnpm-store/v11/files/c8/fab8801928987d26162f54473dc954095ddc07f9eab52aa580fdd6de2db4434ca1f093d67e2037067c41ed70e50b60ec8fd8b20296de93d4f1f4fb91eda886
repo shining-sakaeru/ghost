@@ -1,0 +1,1 @@
+{"version":3,"file":"email-renderer.d.ts","sourceRoot":"","sources":["../../../../src/nodes/email/email-renderer.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAC,gBAAgB,EAAE,eAAe,EAAC,MAAM,qBAAqB,CAAC;AAI3E,UAAU,aAAa;IACnB,IAAI,EAAE,MAAM,CAAC;CAChB;AAED,UAAU,aAAc,SAAQ,gBAAgB;CAAG;AAEnD,wBAAgB,eAAe,CAAC,IAAI,EAAE,aAAa,EAAE,OAAO,GAAE,aAAkB,GAAG,eAAe,CAAC,OAAO,CAAC,CAkB1G"}

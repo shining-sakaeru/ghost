@@ -1,0 +1,7 @@
+# @tryghost/kg-card-factory
+
+## 5.2.4
+
+### Patch Changes
+
+- Documented the package API and corrected the development instructions in the README

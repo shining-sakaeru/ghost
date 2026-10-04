@@ -1,0 +1,10 @@
+{
+  "name": "@mppx/tempo-html",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "accounts": "0.8.10",
+    "mppx": "workspace:*",
+    "viem": "2.47.5"
+  }
+}

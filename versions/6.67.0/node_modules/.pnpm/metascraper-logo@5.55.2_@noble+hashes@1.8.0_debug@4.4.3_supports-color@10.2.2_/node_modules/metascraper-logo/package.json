@@ -1,0 +1,48 @@
+{
+  "name": "metascraper-logo",
+  "description": "Metascraper rule to extract the logo from HTML using Open Graph, JSON-LD, and fallback selectors.",
+  "homepage": "https://github.com/microlinkhq/metascraper/packages/metascraper-logo",
+  "version": "5.55.2",
+  "types": "src/index.d.ts",
+  "main": "src/index.js",
+  "author": {
+    "email": "hello@microlink.io",
+    "name": "microlink.io",
+    "url": "https://microlink.io"
+  },
+  "repository": {
+    "directory": "packages/metascraper-logo",
+    "type": "git",
+    "url": "git+https://github.com/microlinkhq/metascraper.git#master"
+  },
+  "bugs": {
+    "url": "https://github.com/microlinkhq/metascraper/issues"
+  },
+  "keywords": [
+    "brand",
+    "extract",
+    "html",
+    "icon",
+    "json-ld",
+    "logo",
+    "metadata",
+    "metascraper",
+    "open-graph",
+    "scraper"
+  ],
+  "dependencies": {
+    "@metascraper/helpers": "5.55.2",
+    "lodash": "~4.18.0"
+  },
+  "engines": {
+    "node": ">= 22"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "exit 0"
+  },
+  "license": "MIT",
+  "gitHead": "d55833693c1b1736bbc56e0d477b1135871837c6"
+}

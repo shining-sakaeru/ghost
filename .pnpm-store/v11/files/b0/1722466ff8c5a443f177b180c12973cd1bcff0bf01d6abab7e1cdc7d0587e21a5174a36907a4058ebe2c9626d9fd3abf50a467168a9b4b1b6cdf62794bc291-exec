@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+const program = require('commander').program;
+const utils = require('../lib/utils');
+
+const logging = require('@tryghost/logging');
+
+async function main() {
+    const KnexMigrator = await utils.getKnexMigrator({path: process.cwd()});
+
+    program
+        .option('--mgpath <path>')
+        .option('--force')
+        .parse(process.argv);
+
+    const options = program.opts();
+    let knexMigrator;
+
+    try {
+        knexMigrator = new KnexMigrator({
+            knexMigratorFilePath: options.mgpath,
+            executedFromShell: true,
+        });
+    } catch (err) {
+        logging.error(err);
+        process.exit(1);
+    }
+
+    await knexMigrator.reset({force: options.force});
+    logging.info('Finished database reset!');
+}
+
+main().catch(function (err) {
+        logging.error(err);
+        process.exit(1);
+    });

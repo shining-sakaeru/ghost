@@ -1,0 +1,77 @@
+{
+  "name": "@metascraper/helpers",
+  "description": "Shared helper utilities used across metascraper rules for parsing and normalizing metadata.",
+  "homepage": "https://github.com/microlinkhq/metascraper/packages/metascraper-helpers",
+  "version": "5.55.2",
+  "main": "src/index.js",
+  "author": {
+    "email": "hello@microlink.io",
+    "name": "microlink.io",
+    "url": "https://microlink.io"
+  },
+  "repository": {
+    "directory": "packages/metascraper-helpers",
+    "type": "git",
+    "url": "git+https://github.com/microlinkhq/metascraper.git#master"
+  },
+  "bugs": {
+    "url": "https://github.com/microlinkhq/metascraper/issues"
+  },
+  "keywords": [
+    "helpers",
+    "html",
+    "json-ld",
+    "metadata",
+    "metascraper",
+    "normalize",
+    "open-graph",
+    "parse",
+    "scraper",
+    "utils"
+  ],
+  "dependencies": {
+    "audio-extensions": "0.0.0",
+    "chrono-node": "~2.10.0",
+    "condense-whitespace": "~3.0.0",
+    "data-uri-utils": "~1.0.13",
+    "debug-logfmt": "~1.4.7",
+    "entities": "~8.0.0",
+    "file-extension": "~4.0.5",
+    "has-values": "~2.0.1",
+    "image-extensions": "~1.1.0",
+    "is-relative-url": "~4.1.0",
+    "is-uri": "~1.2.14",
+    "iso-639-3": "~3.0.1",
+    "isostring": "0.0.1",
+    "jsdom": "~30.0.0",
+    "jsonrepair": "~3.15.0",
+    "lodash": "~4.18.1",
+    "memoize-one": "~6.0.0",
+    "microsoft-capitalize": "~1.0.8",
+    "mime": "4",
+    "normalize-url": "9",
+    "re2": "~1.26.0",
+    "smartquotes": "~2.3.2",
+    "tldts": "~7.4.2",
+    "url-regex-safe": "~4.0.0",
+    "video-extensions": "2"
+  },
+  "devDependencies": {
+    "ava": "8",
+    "cheerio": "latest"
+  },
+  "engines": {
+    "node": ">= 22.13"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "NODE_PATH=.. TZ=UTC NODE_ENV=test ava --timeout 30s"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "d55833693c1b1736bbc56e0d477b1135871837c6"
+}

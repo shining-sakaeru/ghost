@@ -1,0 +1,55 @@
+{
+  "name": "@tryghost/helpers",
+  "version": "1.1.107",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/SDK.git",
+    "directory": "packages/helpers"
+  },
+  "author": "Ghost Foundation",
+  "license": "MIT",
+  "main": "cjs/helpers.js",
+  "umd:main": "umd/helpers.min.js",
+  "unpkg": "umd/helpers.min.js",
+  "module": "es/helpers.js",
+  "source": "lib/index.js",
+  "scripts": {
+    "dev": "echo \"Implement me!\"",
+    "build": "rollup -c",
+    "prepare": "yarn build",
+    "pretest": "yarn build",
+    "test": "NODE_ENV=testing c8 --lines 70 --reporter text --reporter cobertura mocha './test/**/*.test.js'",
+    "lint": "eslint . --ext .js --cache",
+    "posttest": "yarn lint",
+    "coverage": "NODE_ENV=testing istanbul cover --dir test/coverage _mocha './test/**/*.test.js'"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "cjs/",
+    "lib/",
+    "umd/",
+    "es/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@babel/core": "7.29.7",
+    "@babel/polyfill": "7.12.1",
+    "@rollup/plugin-babel": "7.1.0",
+    "@rollup/plugin-node-resolve": "16.0.3",
+    "@rollup/plugin-terser": "1.0.0",
+    "c8": "12.0.0",
+    "istanbul": "0.4.5",
+    "mocha": "12.0.0",
+    "rollup": "2.80.0",
+    "rollup-plugin-commonjs": "10.1.0",
+    "should": "13.2.3",
+    "sinon": "22.1.0"
+  },
+  "dependencies": {
+    "lodash-es": "4.18.1"
+  },
+  "gitHead": "660bda9609a563bc9e6aab299d3604bcfe2b59a7"
+}

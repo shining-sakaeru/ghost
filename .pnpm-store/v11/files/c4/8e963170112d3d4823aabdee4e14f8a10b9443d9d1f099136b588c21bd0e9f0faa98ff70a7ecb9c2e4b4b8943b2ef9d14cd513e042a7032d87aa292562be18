@@ -1,0 +1,1 @@
+{"version":3,"file":"merge-list-nodes.d.ts","sourceRoot":"","sources":["../../../src/transforms/merge-list-nodes.ts"],"names":[],"mappings":"AACA,OAAO,EAAe,QAAQ,EAAE,MAAM,eAAe,CAAC;AACtD,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,SAAS,CAAC;AAI7C,wBAAgB,uBAAuB,CAAC,IAAI,EAAE,QAAQ,QAWrD;AAGD,wBAAgB,+BAA+B,CAAC,MAAM,EAAE,aAAa,cAMpE"}

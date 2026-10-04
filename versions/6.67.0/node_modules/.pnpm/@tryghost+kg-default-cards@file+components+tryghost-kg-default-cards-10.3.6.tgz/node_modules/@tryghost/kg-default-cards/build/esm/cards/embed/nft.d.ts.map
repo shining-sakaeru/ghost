@@ -1,0 +1,1 @@
+{"version":3,"file":"nft.d.ts","sourceRoot":"","sources":["../../../../src/cards/embed/nft.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,cAAc,EAAqB,aAAa,EAAE,MAAM,gBAAgB,CAAC;AAEvF,QAAA,MAAM,OAAO;IACX,MAAM,qCAA0C,cAAc,GAAG,aAAa;CA0E/E,CAAC;eAEa,OAAO"}

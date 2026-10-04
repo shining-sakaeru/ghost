@@ -1,0 +1,1 @@
+{"version":3,"file":"gallery-parser.d.ts","sourceRoot":"","sources":["../../../../src/nodes/gallery/gallery-parser.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAC,WAAW,EAAC,MAAM,SAAS,CAAC;AAazC,wBAAgB,gBAAgB,CAAC,WAAW,EAAE,KAAK,IAAI,EAAE,MAAM,CAAC,MAAM,EAAE,OAAO,CAAC,KAAK,WAAW;IAExF,MAAM,aAAa,WAAW;4BAIE,WAAW;;;kBAUrB,CAAC;;IAMvB,GAAG,aAAa,WAAW;4BAUK,WAAW;;;kBAkCrB,CAAC;;EAkD9B"}

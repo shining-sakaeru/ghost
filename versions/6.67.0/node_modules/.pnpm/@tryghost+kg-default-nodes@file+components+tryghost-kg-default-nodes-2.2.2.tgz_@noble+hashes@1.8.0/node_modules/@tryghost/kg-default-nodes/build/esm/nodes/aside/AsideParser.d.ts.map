@@ -1,0 +1,1 @@
+{"version":3,"file":"AsideParser.d.ts","sourceRoot":"","sources":["../../../../src/nodes/aside/AsideParser.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAC,WAAW,EAAC,MAAM,SAAS,CAAC;AAEzC,qBAAa,WAAW;IACpB,SAAS,EAAE;QAAC,QAAQ,WAAW,CAAA;KAAC,CAAC;IAEjC,YAAY,SAAS,EAAE;QAAC,QAAQ,WAAW,CAAA;KAAC,EAE3C;IAED,IAAI,gBAAgB;QAEZ,UAAU;YACN,UAAU,YAAY,WAAW;;;YASjC,QAAQ,EAAE,CAAC;;MAGtB;CACJ"}

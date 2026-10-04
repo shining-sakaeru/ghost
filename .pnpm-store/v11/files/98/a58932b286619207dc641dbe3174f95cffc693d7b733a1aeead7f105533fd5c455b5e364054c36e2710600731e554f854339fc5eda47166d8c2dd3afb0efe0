@@ -1,0 +1,1 @@
+{"version":3,"file":"html-to-lexical.d.ts","sourceRoot":"","sources":["../../src/html-to-lexical.ts"],"names":[],"mappings":"AAWA,OAAO,KAAK,EAAE,gBAAgB,EAAE,qBAAqB,EAA2B,MAAM,SAAS,CAAC;AAuBhG,MAAM,WAAW,oBAAoB;IACnC,YAAY,EAAE,gBAAgB,CAAC;CAChC;AAeD,wBAAgB,aAAa,CAAC,IAAI,EAAE,MAAM,EAAE,OAAO,CAAC,EAAE,oBAAoB,GAAG,qBAAqB,CAqCjG"}

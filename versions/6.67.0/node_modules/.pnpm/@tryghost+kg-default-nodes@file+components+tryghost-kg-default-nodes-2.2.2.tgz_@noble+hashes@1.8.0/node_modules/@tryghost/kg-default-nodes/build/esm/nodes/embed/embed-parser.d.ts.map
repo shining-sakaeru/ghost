@@ -1,0 +1,1 @@
+{"version":3,"file":"embed-parser.d.ts","sourceRoot":"","sources":["../../../../src/nodes/embed/embed-parser.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAC,WAAW,EAAC,MAAM,SAAS,CAAC;AAIzC,wBAAgB,cAAc,CAAC,SAAS,EAAE,KAAK,IAAI,EAAE,MAAM,CAAC,MAAM,EAAE,OAAO,CAAC,KAAK,WAAW;IAEpF,MAAM,aAAa,WAAW;4BAKM,WAAW;;;kBAYrB,CAAC;;IAqC3B,MAAM,aAAa,WAAW;4BAGE,WAAW;;;kBAcrB,CAAC;;EAM9B"}

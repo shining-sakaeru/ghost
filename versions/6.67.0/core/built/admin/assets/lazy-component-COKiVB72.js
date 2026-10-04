@@ -1,0 +1,1 @@
+function e(e){return()=>e().then(({default:e})=>({Component:e}))}export{e as t};

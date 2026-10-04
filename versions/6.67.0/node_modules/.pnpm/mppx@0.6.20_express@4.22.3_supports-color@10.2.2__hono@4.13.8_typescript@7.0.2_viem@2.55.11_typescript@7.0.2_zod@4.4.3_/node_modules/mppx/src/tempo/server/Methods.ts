@@ -1,0 +1,40 @@
+import * as Ws_ from '../session/Ws.js'
+import { charge as charge_ } from './Charge.js'
+import { session as session_, settle as settle_ } from './Session.js'
+import { renew as renewSubscription_, subscription as subscription_ } from './Subscription.js'
+
+/**
+ * Creates both Tempo `charge` and `session` methods from shared parameters.
+ *
+ * @example
+ * ```ts
+ * import { Mppx, tempo } from 'mppx/server'
+ *
+ * const mppx = Mppx.create({
+ *   methods: [tempo({ currency: '0x...', recipient: '0x...' })],
+ * })
+ * ```
+ */
+export function tempo<const parameters extends tempo.Parameters>(parameters?: parameters) {
+  return [
+    tempo.charge(parameters as charge_.Parameters as never),
+    tempo.session(parameters as session_.Parameters as never),
+  ] as const
+}
+
+export namespace tempo {
+  export type Parameters = charge_.Parameters & session_.Parameters
+
+  /** Creates a Tempo `charge` method for one-time TIP-20 token transfers. */
+  export const charge = charge_
+  /** Creates a Tempo `session` method for session-based TIP-20 token payments. */
+  export const session = session_
+  /** Creates a Tempo `subscription` method for recurring TIP-20 token payments. */
+  export const subscription = subscription_
+  /** Renews an overdue Tempo subscription outside of the HTTP request path. */
+  export const renewSubscription = renewSubscription_
+  /** One-shot settle: reads highest voucher from storage and submits on-chain. */
+  export const settle = settle_
+  /** Experimental websocket helpers for Tempo sessions. */
+  export const Ws = Ws_
+}

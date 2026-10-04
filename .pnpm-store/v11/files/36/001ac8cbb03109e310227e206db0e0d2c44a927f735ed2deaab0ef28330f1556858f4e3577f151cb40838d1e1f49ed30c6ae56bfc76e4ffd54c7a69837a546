@@ -1,0 +1,28 @@
+{
+  "name": "@tryghost/database-info",
+  "version": "2.3.14",
+  "license": "MIT",
+  "author": "Ghost Foundation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/framework.git",
+    "directory": "packages/database-info"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "knex": "3.3.0"
+  },
+  "scripts": {
+    "dev": "echo \"Implement me!\"",
+    "test": "NODE_ENV=testing vitest run --coverage",
+    "lint": "oxlint -c ../../.oxlintrc.json .",
+    "posttest": "pnpm run lint"
+  }
+}

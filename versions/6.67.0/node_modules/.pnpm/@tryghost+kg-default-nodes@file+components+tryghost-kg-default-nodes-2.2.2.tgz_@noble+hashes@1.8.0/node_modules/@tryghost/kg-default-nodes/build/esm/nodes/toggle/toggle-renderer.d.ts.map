@@ -1,0 +1,1 @@
+{"version":3,"file":"toggle-renderer.d.ts","sourceRoot":"","sources":["../../../../src/nodes/toggle/toggle-renderer.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAC,gBAAgB,EAAC,MAAM,qBAAqB,CAAC;AAI1D,UAAU,cAAc;IACpB,OAAO,EAAE,MAAM,CAAC;IAChB,OAAO,EAAE,MAAM,CAAC;CACnB;AAED,UAAU,aAAc,SAAQ,gBAAgB;CAAG;AAyCnD,wBAAgB,gBAAgB,CAAC,IAAI,EAAE,cAAc,EAAE,OAAO,GAAE,aAAkB;;UAavD,OAAO;EACjC"}

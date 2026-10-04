@@ -1,0 +1,1 @@
+var e=(e,t=!1)=>{try{let n=[`ref`,`attribution_id`,`attribution_type`],r=new URL(e);for(let e of n)r.searchParams.delete(e);return t?(r.host+(r.pathname===`/`&&!r.search?``:r.pathname)+(r.search?r.search:``)+(r.hash?r.hash:``)).replace(/^www\./,``):r.toString()}catch{return e}};export{e as t};

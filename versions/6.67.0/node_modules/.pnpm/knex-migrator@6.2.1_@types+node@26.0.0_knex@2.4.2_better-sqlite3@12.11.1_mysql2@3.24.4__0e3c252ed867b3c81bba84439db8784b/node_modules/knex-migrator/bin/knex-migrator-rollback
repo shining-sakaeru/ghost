@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+const program = require('commander').program;
+const utils = require('../lib/utils');
+
+const logging = require('@tryghost/logging');
+
+async function main() {
+    const KnexMigrator = await utils.getKnexMigrator({path: process.cwd()});
+
+    program
+        .option('--mgpath <path>')
+        .option('--force')
+        .option('--v <version>', 'The version to rollback to.')
+        .parse(process.argv);
+
+    const options = program.opts();
+    let knexMigrator;
+
+    try {
+        knexMigrator = new KnexMigrator({
+            knexMigratorFilePath: options.mgpath,
+            executedFromShell: true,
+        });
+    } catch (err) {
+        logging.error(err);
+        process.exit(1);
+    }
+
+    await knexMigrator.rollback({force: options.force, version: options.v});
+    logging.info('Rollback was successful.');
+}
+
+main().catch(function (err) {
+        logging.error(err.message);
+
+        if (err.help) {
+            logging.info(err.help);
+        }
+
+        process.exit(1);
+    });

@@ -1,0 +1,28 @@
+{
+  "name": "@tryghost/domain-events",
+  "version": "3.3.15",
+  "license": "MIT",
+  "author": "Ghost Foundation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/framework.git",
+    "directory": "packages/domain-events"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "main": "index.js",
+  "types": "types",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@tryghost/logging": "^5.4.5"
+  },
+  "scripts": {
+    "dev": "echo \"Implement me!\"",
+    "test": "NODE_ENV=testing vitest run --coverage",
+    "lint": "oxlint -c ../../.oxlintrc.json ."
+  }
+}

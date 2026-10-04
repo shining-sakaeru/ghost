@@ -1,0 +1,1 @@
+import{s as e,t}from"./react-BXwhMTuc.js";import{N as n,j as r}from"./index-3ttb1yyZ.js";import{t as i}from"./reload-D5nsPoe2.js";var a=e(t(),1);function o(){let e=n(),t=(0,a.useRef)(!1);return(0,a.useEffect)(()=>{t.current||(t.current=!0,(async()=>{try{await e.signOut()}catch{}r(),i(`/signin`)})())},[e]),null}export{o as default};

@@ -1,0 +1,1 @@
+{"version":3,"file":"video-parser.d.ts","sourceRoot":"","sources":["../../../../src/nodes/video/video-parser.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAC,WAAW,EAAC,MAAM,SAAS,CAAC;AAGzC,wBAAgB,cAAc,CAAC,SAAS,EAAE,KAAK,IAAI,EAAE,MAAM,CAAC,MAAM,EAAE,OAAO,CAAC,KAAK,WAAW;IAEpF,MAAM,aAAa,WAAW;4BAIE,WAAW;;;kBAoDrB,CAAC;;EAM9B"}

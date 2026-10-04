@@ -1,0 +1,53 @@
+{
+  "name": "@keyvhq/memoize",
+  "description": "Memoize any function using Keyv as storage backend.",
+  "homepage": "https://keyvhq.js.org",
+  "version": "2.2.5",
+  "types": "./src/index.d.ts",
+  "main": "src/index.js",
+  "author": {
+    "email": "hello@microlink.io",
+    "name": "microlink.io",
+    "url": "https://microlink.io"
+  },
+  "repository": {
+    "directory": "packages/memo",
+    "type": "git",
+    "url": "git+https://github.com/microlinkhq/keyv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/microlinkhq/keyvhq/issues"
+  },
+  "keywords": [
+    "cache",
+    "key",
+    "keyv",
+    "memo",
+    "memoize",
+    "store",
+    "ttl",
+    "value"
+  ],
+  "dependencies": {
+    "@keyvhq/core": "2.1.15",
+    "mimic-fn": "~3.1.0",
+    "null-prototype-object": "~1.2.5"
+  },
+  "devDependencies": {
+    "ava": "5"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "e2269a46347fbbd02920af7330111c04d6fa2f9a"
+}

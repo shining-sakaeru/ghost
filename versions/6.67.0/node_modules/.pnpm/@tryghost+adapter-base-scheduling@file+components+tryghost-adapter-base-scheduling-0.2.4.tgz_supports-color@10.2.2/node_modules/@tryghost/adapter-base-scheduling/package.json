@@ -1,0 +1,36 @@
+{
+  "name": "@tryghost/adapter-base-scheduling",
+  "version": "0.2.4",
+  "description": "The adapter-base-scheduling package for Ghost.",
+  "license": "MIT",
+  "author": "Ghost Foundation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/Ghost.git",
+    "directory": "packages/adapters/scheduling-base"
+  },
+  "files": [
+    "build"
+  ],
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    }
+  },
+  "dependencies": {
+    "@tryghost/logging": "5.4.5"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test:unit": "NODE_ENV=testing vitest run --coverage",
+    "test": "pnpm run '/^test:/'",
+    "test:types": "tsc --noEmit -p test/tsconfig.json",
+    "lint:code": "eslint src/ --cache",
+    "lint:test": "eslint test/ --cache",
+    "lint": "pnpm run '/^lint:/'"
+  }
+}

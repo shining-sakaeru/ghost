@@ -1,0 +1,1 @@
+{"version":3,"file":"get-resized-image-dimensions.d.ts","sourceRoot":"","sources":["../../../src/utils/get-resized-image-dimensions.ts"],"names":[],"mappings":"AAAA,UAAU,eAAe;IACrB,KAAK,EAAE,MAAM,CAAC;IACd,MAAM,EAAE,MAAM,CAAC;CAClB;AAED,eAAO,MAAM,yBAAyB,UAAoB,eAAe,mDAAgD;IAAC,KAAK,CAAC,EAAE,MAAM,CAAC;IAAC,MAAM,CAAC,EAAE,MAAM,CAAA;CAAC,KAAQ,eAuBjK,CAAC"}

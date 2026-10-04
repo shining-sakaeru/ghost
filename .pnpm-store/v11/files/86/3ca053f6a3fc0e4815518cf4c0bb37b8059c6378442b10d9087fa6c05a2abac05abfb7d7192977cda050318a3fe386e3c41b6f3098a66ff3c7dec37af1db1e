@@ -1,0 +1,55 @@
+{
+  "name": "@tryghost/color-utils",
+  "version": "0.2.21",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/SDK.git",
+    "directory": "packages/color-utils"
+  },
+  "author": "Ghost Foundation",
+  "license": "MIT",
+  "main": "cjs/color-utils.js",
+  "umd:main": "umd/color-utils.min.js",
+  "unpkg": "umd/color-utils.min.js",
+  "module": "es/color-utils.js",
+  "source": "src/color-utils.ts",
+  "types": "types/color-utils.d.ts",
+  "scripts": {
+    "dev": "echo \"Implement me!\"",
+    "test": "NODE_ENV=testing c8 --src cjs --reporter text --reporter cobertura mocha './test/**/*.test.js'",
+    "build": "rollup -c && tsc --declaration --emitDeclarationOnly --declarationDir ./types",
+    "lint": "eslint . --ext .js --cache",
+    "prepare": "NODE_ENV=production yarn build",
+    "posttest": "yarn lint"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "cjs/",
+    "src/",
+    "umd/",
+    "es/",
+    "types/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "16.0.3",
+    "@rollup/plugin-terser": "1.0.0",
+    "@rollup/plugin-typescript": "12.3.0",
+    "c8": "12.0.0",
+    "mocha": "12.0.0",
+    "rollup": "2.80.0",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-replace": "2.2.0",
+    "should": "13.2.3",
+    "sinon": "22.1.0",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "@types/color": "4.2.1",
+    "color": "3.2.1"
+  },
+  "gitHead": "660bda9609a563bc9e6aab299d3604bcfe2b59a7"
+}

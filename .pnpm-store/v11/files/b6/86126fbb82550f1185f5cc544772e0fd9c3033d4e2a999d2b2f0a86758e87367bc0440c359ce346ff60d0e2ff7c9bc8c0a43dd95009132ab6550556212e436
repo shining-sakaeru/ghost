@@ -1,0 +1,1 @@
+{"version":3,"file":"fee-token.d.ts","sourceRoot":"","sources":["../../../src/tempo/internal/fee-token.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,EAAE,MAAM,MAAM,CAAA;AA6B3C,wBAAsB,eAAe,CAAC,UAAU,EAAE;IAChD,OAAO,EAAE,OAAO,CAAA;IAChB,eAAe,CAAC,EAAE,SAAS,OAAO,EAAE,GAAG,SAAS,CAAA;IAChD,MAAM,EAAE,MAAM,CAAA;CACf,GAAG,OAAO,CAAC,OAAO,GAAG,SAAS,CAAC,CAiB/B"}
