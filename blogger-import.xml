@@ -1,0 +1,943 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom'
+      xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/'
+      xmlns:gd='http://schemas.google.com/g/2005'
+      xmlns:thr='http://purl.org/syndication/thread/1.0'>
+  <id>tag:blogger.com,1999:blog-ghost-json-export</id>
+  <updated>2026-10-04T11:12:04Z</updated>
+  <title type='text'>Noah's Blog - Ghost JSON Export</title>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-1</id>
+    <published>2026-10-04T04:26:04Z</published>
+    <updated>2026-10-04T04:26:04Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Coming soon</title>
+    <content type='html'>&lt;p&gt;This is Noah&#x27;s Blog, a brand new site by Noah Sim that&#x27;s just getting started. Things will be up and running here shortly, but you can &lt;a href=&quot;#/portal/&quot;&gt;subscribe&lt;/a&gt; in the meantime if you&#x27;d like to stay up to date and receive emails when new content is published!&lt;/p&gt;</content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-2</id>
+    <published>2021-01-08T10:00:00Z</published>
+    <updated>2021-01-08T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Jekyll 따라하기(3) - Jekyll Web Font</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;github blog 사용을 위한 Jykell Setup 과정입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference: https://moon9342.github.io/jekyll-font&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;_layout/default.html&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Configure with web font link&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;assets/css/screen.css&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;사용 font 설정&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Build&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;bundle exec jekyll serve&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;특이사항 없이 잘 작동.&lt;/p&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-3</id>
+    <published>2021-01-08T10:00:00Z</published>
+    <updated>2021-01-08T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Jekyll 따라하기(8) - Travis CI</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;github blog 사용을 위한 Jykell Setup 과정입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference: https://moon9342.github.io/jekyll-travis-ci-public&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Source Folder 및 Target Folder 준비&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Source Folder: Before Compile
+Target Folder: After Compile&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Github push&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;위 2개 Folder에 대한 github repository 생성&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;_config.yml 설정&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;destination 값을 ./output 을 변경&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Git Submodule 생성&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;git submodule add https://github.com/github-username/repository.github.io.git output
+git submodule update&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Travis계정 생성&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;public으로 생성함.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;.travis.yml 및 Rakefile 설정&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;두개 File 생성 및 설정&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Github Token 생성&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Setting &amp;gt; Developer settings &amp;gt; Personal access tokens - Generate New Token&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Token Encrypt. 암호화.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;gem install travis&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;travis login –pro&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;travis encrypt GITHUB_TOKEN=&amp;lt;생성한 github token&amp;gt; -r &amp;lt;github username&amp;gt;/&amp;lt;repository&amp;gt;&lt;/code&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;생성된 secure code를 .travis.yml 안에 위치한 secure 에 반영함&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run Travis CI&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Source folder에서 git push를 진행&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Travis CI homepage에서 진행상황 check&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;자동 build 및 Target folder로 push&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;github.io 홈페이지 업데이트 완료&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2022-01-08&quot;&gt;2022-01-08&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;현재 travis-ci.org는 사용되지 않으며&lt;br /&gt;
+travis-ci.com 를 사용하는 것을 확인.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;cli에서 travis login시 fail. 아래처럼 사용하면 정상 동작함&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;travis login --com --github-token &amp;lt;생성한 github token&amp;gt;&lt;/code&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Source folder에서 push시 fail 발생
+&lt;img src=&quot;./assets/built/images/travis error.png&quot; alt=&quot;Travis error&quot; title=&quot;Travis error&quot; /&gt;
+파악해보니 Travis CI가 유료화 된 것으로 보임&lt;br /&gt;
+ Trial Plan 사용시 정상 동작하는 것 확인함.&lt;br /&gt;
+ 신용카드 번호 등록해야 하며, VAT ID가 나오는데 필자는 아무렇게나 적어도 문제 없었음.&lt;br /&gt;
+ 아래 이미지들 참고.&lt;br /&gt;
+&lt;img src=&quot;./assets/built/images/travis select plan.png&quot; alt=&quot;Travis select plan&quot; /&gt;
+&lt;img src=&quot;./assets/built/images/travis trial plan.png&quot; alt=&quot;Travis trial plan&quot; /&gt;
+&lt;img src=&quot;./assets/built/images/travis credit usage.png&quot; alt=&quot;Travis credit usage&quot; /&gt;
+&lt;img src=&quot;./assets/built/images/travis build start.png&quot; alt=&quot;Travis build start&quot; /&gt;
+&lt;img src=&quot;./assets/built/images/travis build completed.png&quot; alt=&quot;Travis build completed&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-4</id>
+    <published>2021-02-03T10:00:00Z</published>
+    <updated>2021-02-03T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>React - fetch</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;!-- &lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt; --&gt;
+
+&lt;p&gt;API를 느져오는 React 기능. fetch&lt;/p&gt;
+
+&lt;!-- - Reference: https://en.wikipedia.org/wiki/Search_engine_optimization --&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;url에서 fetch를 사용하여 json 정보를 끌어와 보여줌.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fetch(&quot;url&quot;)
+  .then((response) =&amp;gt; response.json())
+  .then((data) =&amp;gt; console.log(data));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;화면에 뿌려줄 때, useState와 map 기능을 사용하여 진행하려는데
+마음대로 되지 않아 시도중.. 성공 후 업데이트 하려합니다.&lt;/p&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-5</id>
+    <published>2021-01-01T10:00:00Z</published>
+    <updated>2021-01-01T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Jekyll 따라하기(0) - Jekyll Start</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;github blog를 생성하면서 사용하게 된 jekyll에 대한 post 입니다.&lt;br /&gt;
+얼큰우동님 블로그(https://moon9342.github.io/)를 참고하여 진행했습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Hello World&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-6</id>
+    <published>2021-01-08T10:00:00Z</published>
+    <updated>2021-01-08T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Jekyll 따라하기(6) - Google Search Console</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;github blog 사용을 위한 Jykell Setup 과정입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference: https://moon9342.github.io/jekyll-sitemap&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;robots.txt 생성&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;https://support.google.com/webmasters/answer/6062596?hl=ko&amp;amp;ref_topic=6061961&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;sitemap.xml 설정&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;./sitemap.xml 생성 및 설정&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Google Search Console 계정 생성&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;https://developers.google.com/search#?modal_active=none
+Github page url 연결&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sitemaps 설정&lt;/p&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;크롤링 - Sitemaps에 sitemap.xml 추가&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;제출된 사이트맵 - 상태: 가져올 수 없음 error 발생.&lt;br /&gt;
+문제점 파악 중.&lt;br /&gt;
+&lt;img src=&quot;./assets/built/images/sitemap failed to get.png&quot; alt=&quot;Sitemap import error&quot; /&gt;&lt;/p&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-7</id>
+    <published>2021-01-08T10:00:00Z</published>
+    <updated>2021-01-08T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Jekyll 따라하기(7) - GitHub Gist</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;github blog 사용을 위한 Jykell Setup 과정입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference: https://moon9342.github.io/jekyll-gist&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install jekyll-gist&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;gem install jekyll-gist&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;_config.yml 설정&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;plugins에 jekyll-gist 추가&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;gist 적용&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;gist link copy&lt;br /&gt;
+형식은 다음과 같음&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script src=&quot;https://gist.github.com/userID/url.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;아래 처럼 사용.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;noscript&amp;gt;&amp;lt;pre&amp;gt;404: Not Found&amp;lt;/pre&amp;gt;&amp;lt;/noscript&amp;gt;&amp;lt;script src=&quot;https://gist.github.com/userID/url.js&quot;&amp;gt; &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;특이사항 없이 잘 동작합니다.&lt;/p&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-8</id>
+    <published>2021-01-02T10:00:00Z</published>
+    <updated>2021-01-02T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Jekyll 따라하기(1) - Jekyll Setup</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;github blog 사용을 위한 Jykell Setup 과정입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference: https://moon9342.github.io/jekyll-start&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ruby 설치&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;https://rubyinstaller.org/downloads/&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;bundler 설치 및 Local Server 실행&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;사용할 폴더 생성&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Jasper2 theme download (http://jekyllthemes.org/themes/jasper2/)&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;gem install bundler&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;bundle install&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;bundle exec jekyll serve&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;http://localhost:4000 Local 홈페이지 접속&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;특이사항은 따로 없었습니다.&lt;/p&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-9</id>
+    <published>2021-01-23T10:00:00Z</published>
+    <updated>2021-01-23T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>SEO Tool (Search Engine Optimization)</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;!-- &lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt; --&gt;
+
+&lt;p&gt;SEO Tool 소개입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference: https://en.wikipedia.org/wiki/Search_engine_optimization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;SEO. Search Engine Optimization&lt;br /&gt;
+한국어로 “검색 엔진 최적화 기술”&lt;/p&gt;
+
+&lt;p&gt;Wikipedia define은 아래와 같습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Search engine optimization (SEO) is the process of improving the quality and quantity of website traffic to a website or a web page from search engines.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;웹 검색 엔진에서 트래픽의 질과 양을 향상시키기 위한 프로세스.&lt;/p&gt;
+
+&lt;p&gt;이번에는 https://seositecheckup.com/ 를 이용하여 확인해보려 합니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;본 blog의 점수.
+Issue. 그 이유. 수정 방법이 보기좋게 나와있어 좋네요.
+&lt;img src=&quot;./assets/built/images/setsitecheckup.png&quot; alt=&quot;setsitecheckup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;url만 입력하고 진행하면 특이사항 없이 잘 작동하고
+문제점들은 시간될때 수정 해야겠습니다.&lt;/p&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-10</id>
+    <published>2021-01-08T10:00:00Z</published>
+    <updated>2021-01-08T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Jekyll 따라하기(2) - Jekyll Modify and Publish</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;github blog 사용을 위한 Jykell Setup 과정입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference: https://moon9342.github.io/jekyll-struct&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jasper2 테마 install&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;http://jekyllthemes.org/themes/jasper2/
+Download &amp;amp; Move to folder you want&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Modify &lt;em&gt;config.yml&lt;/em&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Jasper2 테마 main 설정 파일 수정&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Modify authors.yml&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;저자 정보 수정&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Modify tags.yml&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;tag 설정&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Modify _include/navigation.html&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Page navigation 설정&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;_posts&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;2022-01-08-file-name.md&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;archive.md / author_archive.md&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Posting 시간순 정렬&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Content list&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;tagName&gt;-table-of-contents.html 생성 및 css 설정
+&lt;/tagName&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gulp 설치 및 gulpfile.js 설정&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;CSS 연동&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Github Push&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;git push origin master
+push 하면 10-20분 뒤 홈페이지에서 확인 가능&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;gulp 설치 시 알수 없는 에러들이 많았는데,&lt;br /&gt;
+googling으로 해결이 불가능 했습니다.&lt;br /&gt;
+해결책으로 관련 package 싹 밀고 재설치 하니 잘 동작했습니다.&lt;/p&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-11</id>
+    <published>2021-01-30T10:00:00Z</published>
+    <updated>2021-01-30T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Scikit-learn</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;!-- &lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt; --&gt;
+
+&lt;p&gt;Information about Machine Learning Algorithm.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference: https://scikit-learn.org/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Python에서 사용하는 머신러닝 라이브러리이다.
+github에 오픈 소스로 공개되어 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;URL : https://github.com/scikit-learn/scikit-learn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Library import&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import sklearn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;!-- ![setsitecheckup](./assets/built/images/setsitecheckup.png) --&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-12</id>
+    <published>2021-01-01T10:00:00Z</published>
+    <updated>2021-01-01T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>첫 블로그 포스트</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;p&gt;첫 포스팅 입니다.&lt;/p&gt;
+
+&lt;p&gt;제가 관심있는 영역들에 대한 포스트를 할 생각입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Engineering&lt;/li&gt;
+  &lt;li&gt;Robot&lt;/li&gt;
+  &lt;li&gt;AI&lt;/li&gt;
+  &lt;li&gt;Server&lt;/li&gt;
+  &lt;li&gt;Linux&lt;/li&gt;
+  &lt;li&gt;개인적인 관심사들&lt;/li&gt;
+&lt;/ul&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-13</id>
+    <published>2021-01-08T10:00:00Z</published>
+    <updated>2021-01-08T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Jekyll 따라하기(4) - Highlighting with rouge</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;github blog 사용을 위한 Jykell Setup 과정입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference: https://moon9342.github.io/jekyll-rouge&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;install rouge&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;gem install rouge&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용 가능한 style 확인&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;rougify help style&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;theme css 생성&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;rougify style monokai.sublime &amp;gt; assets/css/syntax.css&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;_layouts/default.html 설정&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;make CSS to Post interface&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;특이사항 없이 잘 작동.&lt;/p&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-post-14</id>
+    <published>2021-01-08T10:00:00Z</published>
+    <updated>2021-01-08T10:00:00Z</updated>
+    <category scheme="http://www.blogger.com/atom/ns#" term="Tech"/>
+    <title type='text'>Jekyll 따라하기(5) - Search function with lunr.js</title>
+    <content type='html'>
+                &lt;div class=&quot;kg-card-markdown&quot;&gt;
+                    &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Jekyll 따라하기의 목차입니다.&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-start&quot;&gt;Jekyll 따라하기(0) - Jekyll Start&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-setup&quot;&gt;Jekyll 따라하기(1) - Jekyll Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-modifyAndPublish&quot;&gt;Jekyll 따라하기(2) - Jekyll Modify and Publish&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-webFont&quot;&gt;Jekyll 따라하기(3) - Jekyll Web Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-highlighting&quot;&gt;Jekyll 따라하기(4) - Highlighting with rouge&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-searchFunction&quot;&gt;Jekyll 따라하기(5) - Search function with lunr.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-googleSearchConsole&quot;&gt;Jekyll 따라하기(6) - Google Search Console&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-gitHubGist&quot;&gt;Jekyll 따라하기(7) - GitHub Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./jekyll-travisCI&quot;&gt;Jekyll 따라하기(8) - Travis CI&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;github blog 사용을 위한 Jykell Setup 과정입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reference: https://moon9342.github.io/jekyll-search&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;search link 생성&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;_includes/site-nav.html 에서 subscribe를 search로 변경&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Search Page 설정&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;_layouts/default.html 수정
+_includes/subscribe-form.html 수정
+search.html 생성 및 수정&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;lunr.js 다운로드 및 설정&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;assets/js/lunr.js&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;lunr.js 추천코드 사용시 동작하지 않음.&lt;br /&gt;
+https://lunrjs.com/ 에서 다운로드 받아도 동작하지 않음.&lt;br /&gt;
+문제점 확인 중…&lt;/p&gt;
+
+                &lt;/div&gt;
+            </content>
+    <author>
+      <name>Noah</name>
+    </author>
+  </entry>
+</feed>
