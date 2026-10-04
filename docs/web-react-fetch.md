@@ -6,7 +6,7 @@
 - URL: http://64.110.107.153:2368/web-react-fetch/
 - Published: 2021-02-03T10:00:00.000Z
 - Updated: 2021-02-03T10:00:00.000Z
-- Author: Ghost
+- Author: Noah Sim
 
 API를 느져오는 React 기능. fetch
 

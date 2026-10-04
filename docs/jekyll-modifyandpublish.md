@@ -6,7 +6,7 @@
 - URL: http://64.110.107.153:2368/jekyll-modifyandpublish/
 - Published: 2021-01-08T10:00:00.000Z
 - Updated: 2021-01-08T10:00:00.000Z
-- Author: Ghost
+- Author: Noah Sim
 
 Jekyll 따라하기의 목차입니다.
 

@@ -6,7 +6,7 @@
 - URL: http://64.110.107.153:2368/common-firstpost/
 - Published: 2021-01-01T10:00:00.000Z
 - Updated: 2021-01-01T10:00:00.000Z
-- Author: Ghost
+- Author: Noah Sim
 
 첫 포스팅 입니다.
 

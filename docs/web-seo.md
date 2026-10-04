@@ -6,7 +6,7 @@
 - URL: http://64.110.107.153:2368/web-seo/
 - Published: 2021-01-23T10:00:00.000Z
 - Updated: 2021-01-23T10:00:00.000Z
-- Author: Ghost
+- Author: Noah Sim
 
 SEO Tool 소개입니다.
 

@@ -5,8 +5,8 @@
 # Coming soon
 - URL: http://64.110.107.153:2368/coming-soon/
 - Published: 2026-10-04T04:26:04.000Z
-- Updated: 2026-10-04T04:26:04.000Z
-- Author: Ghost
+- Updated: 2026-10-04T08:43:37.000Z
+- Author: Noah Sim
 - Tags: News
 
-This is a brand new site that's just getting started. Things will be up and running here shortly, but you can [subscribe](#/portal/) in the meantime if you'd like to stay up to date and receive emails when new content is published!
+This is Noah's Blog, a brand new site by Noah Sim that's just getting started. Things will be up and running here shortly, but you can [subscribe](#/portal/) in the meantime if you'd like to stay up to date and receive emails when new content is published!
