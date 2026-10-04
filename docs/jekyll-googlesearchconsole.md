@@ -4,8 +4,8 @@
 
 # Jekyll 따라하기(6) - Google Search Console
 - URL: http://localhost:2368/jekyll-googlesearchconsole/
-- Published: 2026-10-04T06:03:49.000Z
-- Updated: 2026-10-04T06:03:49.000Z
+- Published: 2021-01-08T10:00:00.000Z
+- Updated: 2021-01-08T10:00:00.000Z
 - Author: Ghost
 
 Jekyll 따라하기의 목차입니다.

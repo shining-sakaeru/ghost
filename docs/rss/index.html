@@ -1,13 +1,165 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Ghost]]></title><description><![CDATA[Thoughts, stories and ideas]]></description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Ghost</title><link>http://localhost:2368/</link></image><generator>Ghost 6.67</generator><lastBuildDate>Sun, 04 Oct 2026 06:04:25 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Jekyll 따라하기(8) - Travis CI]]></title><description><![CDATA[<div class="kg-card-markdown">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Ghost]]></title><description><![CDATA[Thoughts, stories and ideas]]></description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Ghost</title><link>http://localhost:2368/</link></image><generator>Ghost 6.67</generator><lastBuildDate>Sun, 04 Oct 2026 07:06:41 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Coming soon]]></title><description><![CDATA[<p>This is a brand new site that&apos;s just getting started. Things will be up and running here shortly, but you can <a href="#/portal/" rel="noopener noreferrer">subscribe</a> in the meantime if you&apos;d like to stay up to date and receive emails when new content is published!</p>]]></description><link>http://localhost:2368/coming-soon/</link><guid isPermaLink="false">6ac1d55c8703e103a33a1ca8</guid><category><![CDATA[News]]></category><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 04:26:04 GMT</pubDate><media:content url="https://static.ghost.org/v4.0.0/images/feature-image.jpg" medium="image"/><content:encoded><![CDATA[<img src="https://static.ghost.org/v4.0.0/images/feature-image.jpg" alt="Coming soon"><p>This is a brand new site that&apos;s just getting started. Things will be up and running here shortly, but you can <a href="#/portal/" rel="noopener noreferrer">subscribe</a> in the meantime if you&apos;d like to stay up to date and receive emails when new content is published!</p>]]></content:encoded></item><item><title><![CDATA[React - fetch]]></title><description><![CDATA[<div class="kg-card-markdown">
+                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
+    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
+    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
+    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub</a></li></ul></div>]]></description><link>http://localhost:2368/web-react-fetch/</link><guid isPermaLink="false">f5b8ff4a5b6a4b46b265f8a1</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Wed, 03 Feb 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
+                <div class="kg-card-markdown">
+                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
+    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
+    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
+    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub Gist</a></li>
+    <li><a href="./jekyll-travisCI">Jekyll 따라하기(8) - Travis CI</a></li>
+
+</ul> -->
+
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="React - fetch"><p>API&#xb97c; &#xb290;&#xc838;&#xc624;&#xb294; React &#xae30;&#xb2a5;. fetch</p>
+
+<!-- - Reference: https://en.wikipedia.org/wiki/Search_engine_optimization -->
+
+<hr>
+<p>url&#xc5d0;&#xc11c; fetch&#xb97c; &#xc0ac;&#xc6a9;&#xd558;&#xc5ec; json &#xc815;&#xbcf4;&#xb97c; &#xb04c;&#xc5b4;&#xc640; &#xbcf4;&#xc5ec;&#xc90c;.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fetch(&quot;url&quot;)
+  .then((response) =&gt; response.json())
+  .then((data) =&gt; console.log(data));
+</code></pre></div></div>
+
+<hr>
+
+<p>&#xd654;&#xba74;&#xc5d0; &#xbfcc;&#xb824;&#xc904; &#xb54c;, useState&#xc640; map &#xae30;&#xb2a5;&#xc744; &#xc0ac;&#xc6a9;&#xd558;&#xc5ec; &#xc9c4;&#xd589;&#xd558;&#xb824;&#xb294;&#xb370;
+&#xb9c8;&#xc74c;&#xb300;&#xb85c; &#xb418;&#xc9c0; &#xc54a;&#xc544; &#xc2dc;&#xb3c4;&#xc911;.. &#xc131;&#xacf5; &#xd6c4; &#xc5c5;&#xb370;&#xc774;&#xd2b8; &#xd558;&#xb824;&#xd569;&#xb2c8;&#xb2e4;.</p>
+
+                </div>
+            ]]></content:encoded></item><item><title><![CDATA[Scikit-learn]]></title><description><![CDATA[<div class="kg-card-markdown">
+                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
+    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
+    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
+    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub</a></li></ul></div>]]></description><link>http://localhost:2368/ai-scikit-learn/</link><guid isPermaLink="false">3f029d16d9a744c0bb27d6a2</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sat, 30 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
+                <div class="kg-card-markdown">
+                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
+    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
+    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
+    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub Gist</a></li>
+    <li><a href="./jekyll-travisCI">Jekyll 따라하기(8) - Travis CI</a></li>
+
+</ul> -->
+
+<img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Scikit-learn"><p>Information about Machine Learning Algorithm.</p>
+
+<ul>
+  <li>Reference: https://scikit-learn.org/</li>
+</ul>
+
+<hr>
+
+<p>Python&#xc5d0;&#xc11c; &#xc0ac;&#xc6a9;&#xd558;&#xb294; &#xba38;&#xc2e0;&#xb7ec;&#xb2dd; &#xb77c;&#xc774;&#xbe0c;&#xb7ec;&#xb9ac;&#xc774;&#xb2e4;.
+github&#xc5d0; &#xc624;&#xd508; &#xc18c;&#xc2a4;&#xb85c; &#xacf5;&#xac1c;&#xb418;&#xc5b4; &#xc788;&#xb2e4;</p>
+
+<ul>
+  <li>URL : https://github.com/scikit-learn/scikit-learn</li>
+</ul>
+
+<hr>
+
+<p>Library import</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import sklearn
+</code></pre></div></div>
+
+<!-- ![setsitecheckup](./assets/built/images/setsitecheckup.png) -->
+
+                </div>
+            ]]></content:encoded></item><item><title><![CDATA[SEO Tool (Search Engine Optimization)]]></title><description><![CDATA[<div class="kg-card-markdown">
+                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
+    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
+    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
+    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub</a></li></ul></div>]]></description><link>http://localhost:2368/web-seo/</link><guid isPermaLink="false">6bb3fcf9a502462f808bc418</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sat, 23 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
+                <div class="kg-card-markdown">
+                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
+    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
+    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
+    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub Gist</a></li>
+    <li><a href="./jekyll-travisCI">Jekyll 따라하기(8) - Travis CI</a></li>
+
+</ul> -->
+
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="SEO Tool (Search Engine Optimization)"><p>SEO Tool &#xc18c;&#xac1c;&#xc785;&#xb2c8;&#xb2e4;.</p>
+
+<ul>
+  <li>Reference: https://en.wikipedia.org/wiki/Search_engine_optimization</li>
+</ul>
+
+<hr>
+
+<p>SEO. Search Engine Optimization<br>
+&#xd55c;&#xad6d;&#xc5b4;&#xb85c; &#x201c;&#xac80;&#xc0c9; &#xc5d4;&#xc9c4; &#xcd5c;&#xc801;&#xd654; &#xae30;&#xc220;&#x201d;</p>
+
+<p>Wikipedia define&#xc740; &#xc544;&#xb798;&#xc640; &#xac19;&#xc2b5;&#xb2c8;&#xb2e4;.</p>
+
+<blockquote>
+  <p>Search engine optimization (SEO) is the process of improving the quality and quantity of website traffic to a website or a web page from search engines.</p>
+</blockquote>
+
+<p>&#xc6f9; &#xac80;&#xc0c9; &#xc5d4;&#xc9c4;&#xc5d0;&#xc11c; &#xd2b8;&#xb798;&#xd53d;&#xc758; &#xc9c8;&#xacfc; &#xc591;&#xc744; &#xd5a5;&#xc0c1;&#xc2dc;&#xd0a4;&#xae30; &#xc704;&#xd55c; &#xd504;&#xb85c;&#xc138;&#xc2a4;.</p>
+
+<p>&#xc774;&#xbc88;&#xc5d0;&#xb294; https://seositecheckup.com/ &#xb97c; &#xc774;&#xc6a9;&#xd558;&#xc5ec; &#xd655;&#xc778;&#xd574;&#xbcf4;&#xb824; &#xd569;&#xb2c8;&#xb2e4;.</p>
+
+<hr>
+
+<p>&#xbcf8; blog&#xc758; &#xc810;&#xc218;.
+Issue. &#xadf8; &#xc774;&#xc720;. &#xc218;&#xc815; &#xbc29;&#xbc95;&#xc774; &#xbcf4;&#xae30;&#xc88b;&#xac8c; &#xb098;&#xc640;&#xc788;&#xc5b4; &#xc88b;&#xb124;&#xc694;.
+<img src="./assets/built/images/setsitecheckup.png" alt="SEO Tool (Search Engine Optimization)"></p>
+
+<p>url&#xb9cc; &#xc785;&#xb825;&#xd558;&#xace0; &#xc9c4;&#xd589;&#xd558;&#xba74; &#xd2b9;&#xc774;&#xc0ac;&#xd56d; &#xc5c6;&#xc774; &#xc798; &#xc791;&#xb3d9;&#xd558;&#xace0;
+&#xbb38;&#xc81c;&#xc810;&#xb4e4;&#xc740; &#xc2dc;&#xac04;&#xb420;&#xb54c; &#xc218;&#xc815; &#xd574;&#xc57c;&#xaca0;&#xc2b5;&#xb2c8;&#xb2e4;.</p>
+
+                </div>
+            ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(8) - Travis CI]]></title><description><![CDATA[<div class="kg-card-markdown">
                     <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
 <ul class="table-of-contents-list">
     <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
     <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
     <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
     <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-travisci/</link><guid isPermaLink="false">ff0966e64be444698fc131f2</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-travisci/</link><guid isPermaLink="false">ef4b48c166ea4b39b29e1be9</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Fri, 08 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
                 <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI"><p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
 <ul class="table-of-contents-list">
     <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
     <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
@@ -139,383 +291,18 @@ travis-ci.com &#xb97c; &#xc0ac;&#xc6a9;&#xd558;&#xb294; &#xac83;&#xc744; &#xd655
   </li>
   <li>
     <p>Source folder&#xc5d0;&#xc11c; push&#xc2dc; fail &#xbc1c;&#xc0dd;
-<img src="./assets/built/images/travis error.png" alt="Travis error" title="Travis error">
+<img src="./assets/built/images/travis error.png" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI" title="Travis error">
 &#xd30c;&#xc545;&#xd574;&#xbcf4;&#xb2c8; Travis CI&#xac00; &#xc720;&#xb8cc;&#xd654; &#xb41c; &#xac83;&#xc73c;&#xb85c; &#xbcf4;&#xc784;<br>
  Trial Plan &#xc0ac;&#xc6a9;&#xc2dc; &#xc815;&#xc0c1; &#xb3d9;&#xc791;&#xd558;&#xb294; &#xac83; &#xd655;&#xc778;&#xd568;.<br>
  &#xc2e0;&#xc6a9;&#xce74;&#xb4dc; &#xbc88;&#xd638; &#xb4f1;&#xb85d;&#xd574;&#xc57c; &#xd558;&#xba70;, VAT ID&#xac00; &#xb098;&#xc624;&#xb294;&#xb370; &#xd544;&#xc790;&#xb294; &#xc544;&#xbb34;&#xb807;&#xac8c;&#xb098; &#xc801;&#xc5b4;&#xb3c4; &#xbb38;&#xc81c; &#xc5c6;&#xc5c8;&#xc74c;.<br>
  &#xc544;&#xb798; &#xc774;&#xbbf8;&#xc9c0;&#xb4e4; &#xcc38;&#xace0;.<br>
-<img src="./assets/built/images/travis select plan.png" alt="Travis select plan">
-<img src="./assets/built/images/travis trial plan.png" alt="Travis trial plan">
-<img src="./assets/built/images/travis credit usage.png" alt="Travis credit usage">
-<img src="./assets/built/images/travis build start.png" alt="Travis build start">
-<img src="./assets/built/images/travis build completed.png" alt="Travis build completed"></p>
+<img src="./assets/built/images/travis select plan.png" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI">
+<img src="./assets/built/images/travis trial plan.png" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI">
+<img src="./assets/built/images/travis credit usage.png" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI">
+<img src="./assets/built/images/travis build start.png" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI">
+<img src="./assets/built/images/travis build completed.png" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI"></p>
   </li>
 </ul>
-
-                </div>
-            ]]></content:encoded></item><item><title><![CDATA[첫 블로그 포스트]]></title><description><![CDATA[<div class="kg-card-markdown">
-                    <p>&#xccab; &#xd3ec;&#xc2a4;&#xd305; &#xc785;&#xb2c8;&#xb2e4;.</p>
-
-<p>&#xc81c;&#xac00; &#xad00;&#xc2ec;&#xc788;&#xb294; &#xc601;&#xc5ed;&#xb4e4;&#xc5d0; &#xb300;&#xd55c; &#xd3ec;&#xc2a4;&#xd2b8;&#xb97c; &#xd560; &#xc0dd;&#xac01;&#xc785;&#xb2c8;&#xb2e4;.</p>
-
-<ul>
-  <li>Engineering</li>
-  <li>Robot</li>
-  <li>AI</li>
-  <li>Server</li>
-  <li>Linux</li>
-  <li>&#xac1c;&#xc778;&#xc801;&#xc778; &#xad00;&#xc2ec;&#xc0ac;&#xb4e4;</li>
-</ul>
-
-                </div>]]></description><link>http://localhost:2368/common-firstpost/</link><guid isPermaLink="false">fec9b64ede0145d7b7a077e3</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
-                <div class="kg-card-markdown">
-                    <p>&#xccab; &#xd3ec;&#xc2a4;&#xd305; &#xc785;&#xb2c8;&#xb2e4;.</p>
-
-<p>&#xc81c;&#xac00; &#xad00;&#xc2ec;&#xc788;&#xb294; &#xc601;&#xc5ed;&#xb4e4;&#xc5d0; &#xb300;&#xd55c; &#xd3ec;&#xc2a4;&#xd2b8;&#xb97c; &#xd560; &#xc0dd;&#xac01;&#xc785;&#xb2c8;&#xb2e4;.</p>
-
-<ul>
-  <li>Engineering</li>
-  <li>Robot</li>
-  <li>AI</li>
-  <li>Server</li>
-  <li>Linux</li>
-  <li>&#xac1c;&#xc778;&#xc801;&#xc778; &#xad00;&#xc2ec;&#xc0ac;&#xb4e4;</li>
-</ul>
-
-                </div>
-            ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(5) - Search function with lunr.js]]></title><description><![CDATA[<div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-searchfunction/</link><guid isPermaLink="false">ebcd8d08631b45fd843b0952</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
-                <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(4) - Highlighting with rouge</a></li>
-    <li><a href="./jekyll-searchFunction">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(5) - Search function with lunr.js</a></li>
-    <li><a href="./jekyll-googleSearchConsole">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(6) - Google Search Console</a></li>
-    <li><a href="./jekyll-gitHubGist">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(7) - GitHub Gist</a></li>
-    <li><a href="./jekyll-travisCI">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI</a></li>
-
-</ul>
-
-<p>github blog &#xc0ac;&#xc6a9;&#xc744; &#xc704;&#xd55c; Jykell Setup &#xacfc;&#xc815;&#xc785;&#xb2c8;&#xb2e4;.</p>
-
-<ul>
-  <li>Reference: https://moon9342.github.io/jekyll-search</li>
-</ul>
-
-<hr>
-
-<ol>
-  <li>
-    <p>search link &#xc0dd;&#xc131;</p>
-
-    <blockquote>
-      <p>_includes/site-nav.html &#xc5d0;&#xc11c; subscribe&#xb97c; search&#xb85c; &#xbcc0;&#xacbd;</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>Search Page &#xc124;&#xc815;</p>
-
-    <blockquote>
-      <p>_layouts/default.html &#xc218;&#xc815;
-_includes/subscribe-form.html &#xc218;&#xc815;
-search.html &#xc0dd;&#xc131; &#xbc0f; &#xc218;&#xc815;</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>lunr.js &#xb2e4;&#xc6b4;&#xb85c;&#xb4dc; &#xbc0f; &#xc124;&#xc815;</p>
-
-    <blockquote>
-      <p>assets/js/lunr.js</p>
-    </blockquote>
-  </li>
-</ol>
-
-<hr>
-
-<p>lunr.js &#xcd94;&#xcc9c;&#xcf54;&#xb4dc; &#xc0ac;&#xc6a9;&#xc2dc; &#xb3d9;&#xc791;&#xd558;&#xc9c0; &#xc54a;&#xc74c;.<br>
-https://lunrjs.com/ &#xc5d0;&#xc11c; &#xb2e4;&#xc6b4;&#xb85c;&#xb4dc; &#xbc1b;&#xc544;&#xb3c4; &#xb3d9;&#xc791;&#xd558;&#xc9c0; &#xc54a;&#xc74c;.<br>
-&#xbb38;&#xc81c;&#xc810; &#xd655;&#xc778; &#xc911;&#x2026;</p>
-
-                </div>
-            ]]></content:encoded></item><item><title><![CDATA[Scikit-learn]]></title><description><![CDATA[<div class="kg-card-markdown">
-                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
-    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
-    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
-    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub</a></li></ul></div>]]></description><link>http://localhost:2368/ai-scikit-learn/</link><guid isPermaLink="false">d6187ce85a5e48ddb7c962f9</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
-                <div class="kg-card-markdown">
-                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
-    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
-    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
-    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub Gist</a></li>
-    <li><a href="./jekyll-travisCI">Jekyll 따라하기(8) - Travis CI</a></li>
-
-</ul> -->
-
-<p>Information about Machine Learning Algorithm.</p>
-
-<ul>
-  <li>Reference: https://scikit-learn.org/</li>
-</ul>
-
-<hr>
-
-<p>Python&#xc5d0;&#xc11c; &#xc0ac;&#xc6a9;&#xd558;&#xb294; &#xba38;&#xc2e0;&#xb7ec;&#xb2dd; &#xb77c;&#xc774;&#xbe0c;&#xb7ec;&#xb9ac;&#xc774;&#xb2e4;.
-github&#xc5d0; &#xc624;&#xd508; &#xc18c;&#xc2a4;&#xb85c; &#xacf5;&#xac1c;&#xb418;&#xc5b4; &#xc788;&#xb2e4;</p>
-
-<ul>
-  <li>URL : https://github.com/scikit-learn/scikit-learn</li>
-</ul>
-
-<hr>
-
-<p>Library import</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import sklearn
-</code></pre></div></div>
-
-<!-- ![setsitecheckup](./assets/built/images/setsitecheckup.png) -->
-
-                </div>
-            ]]></content:encoded></item><item><title><![CDATA[SEO Tool (Search Engine Optimization)]]></title><description><![CDATA[<div class="kg-card-markdown">
-                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
-    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
-    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
-    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub</a></li></ul></div>]]></description><link>http://localhost:2368/web-seo/</link><guid isPermaLink="false">895a41f55f1e40dcaaa7d53e</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
-                <div class="kg-card-markdown">
-                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
-    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
-    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
-    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub Gist</a></li>
-    <li><a href="./jekyll-travisCI">Jekyll 따라하기(8) - Travis CI</a></li>
-
-</ul> -->
-
-<p>SEO Tool &#xc18c;&#xac1c;&#xc785;&#xb2c8;&#xb2e4;.</p>
-
-<ul>
-  <li>Reference: https://en.wikipedia.org/wiki/Search_engine_optimization</li>
-</ul>
-
-<hr>
-
-<p>SEO. Search Engine Optimization<br>
-&#xd55c;&#xad6d;&#xc5b4;&#xb85c; &#x201c;&#xac80;&#xc0c9; &#xc5d4;&#xc9c4; &#xcd5c;&#xc801;&#xd654; &#xae30;&#xc220;&#x201d;</p>
-
-<p>Wikipedia define&#xc740; &#xc544;&#xb798;&#xc640; &#xac19;&#xc2b5;&#xb2c8;&#xb2e4;.</p>
-
-<blockquote>
-  <p>Search engine optimization (SEO) is the process of improving the quality and quantity of website traffic to a website or a web page from search engines.</p>
-</blockquote>
-
-<p>&#xc6f9; &#xac80;&#xc0c9; &#xc5d4;&#xc9c4;&#xc5d0;&#xc11c; &#xd2b8;&#xb798;&#xd53d;&#xc758; &#xc9c8;&#xacfc; &#xc591;&#xc744; &#xd5a5;&#xc0c1;&#xc2dc;&#xd0a4;&#xae30; &#xc704;&#xd55c; &#xd504;&#xb85c;&#xc138;&#xc2a4;.</p>
-
-<p>&#xc774;&#xbc88;&#xc5d0;&#xb294; https://seositecheckup.com/ &#xb97c; &#xc774;&#xc6a9;&#xd558;&#xc5ec; &#xd655;&#xc778;&#xd574;&#xbcf4;&#xb824; &#xd569;&#xb2c8;&#xb2e4;.</p>
-
-<hr>
-
-<p>&#xbcf8; blog&#xc758; &#xc810;&#xc218;.
-Issue. &#xadf8; &#xc774;&#xc720;. &#xc218;&#xc815; &#xbc29;&#xbc95;&#xc774; &#xbcf4;&#xae30;&#xc88b;&#xac8c; &#xb098;&#xc640;&#xc788;&#xc5b4; &#xc88b;&#xb124;&#xc694;.
-<img src="./assets/built/images/setsitecheckup.png" alt="setsitecheckup"></p>
-
-<p>url&#xb9cc; &#xc785;&#xb825;&#xd558;&#xace0; &#xc9c4;&#xd589;&#xd558;&#xba74; &#xd2b9;&#xc774;&#xc0ac;&#xd56d; &#xc5c6;&#xc774; &#xc798; &#xc791;&#xb3d9;&#xd558;&#xace0;
-&#xbb38;&#xc81c;&#xc810;&#xb4e4;&#xc740; &#xc2dc;&#xac04;&#xb420;&#xb54c; &#xc218;&#xc815; &#xd574;&#xc57c;&#xaca0;&#xc2b5;&#xb2c8;&#xb2e4;.</p>
-
-                </div>
-            ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(3) - Jekyll Web Font]]></title><description><![CDATA[<div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-webfont/</link><guid isPermaLink="false">78ba0ff4b75943938bba0782</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
-                <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(4) - Highlighting with rouge</a></li>
-    <li><a href="./jekyll-searchFunction">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(5) - Search function with lunr.js</a></li>
-    <li><a href="./jekyll-googleSearchConsole">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(6) - Google Search Console</a></li>
-    <li><a href="./jekyll-gitHubGist">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(7) - GitHub Gist</a></li>
-    <li><a href="./jekyll-travisCI">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI</a></li>
-
-</ul>
-
-<p>github blog &#xc0ac;&#xc6a9;&#xc744; &#xc704;&#xd55c; Jykell Setup &#xacfc;&#xc815;&#xc785;&#xb2c8;&#xb2e4;.</p>
-
-<ul>
-  <li>Reference: https://moon9342.github.io/jekyll-font</li>
-</ul>
-
-<hr>
-
-<ol>
-  <li>
-    <p>_layout/default.html</p>
-
-    <blockquote>
-      <p>Configure with web font link</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>assets/css/screen.css</p>
-
-    <blockquote>
-      <p>&#xc0ac;&#xc6a9; font &#xc124;&#xc815;</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>Build</p>
-
-    <blockquote>
-      <p>bundle exec jekyll serve</p>
-    </blockquote>
-  </li>
-</ol>
-
-<hr>
-
-<p>&#xd2b9;&#xc774;&#xc0ac;&#xd56d; &#xc5c6;&#xc774; &#xc798; &#xc791;&#xb3d9;.</p>
-
-                </div>
-            ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(7) - GitHub Gist]]></title><description><![CDATA[<div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-githubgist/</link><guid isPermaLink="false">687d3191287f4f5e9f5cdb42</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
-                <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(4) - Highlighting with rouge</a></li>
-    <li><a href="./jekyll-searchFunction">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(5) - Search function with lunr.js</a></li>
-    <li><a href="./jekyll-googleSearchConsole">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(6) - Google Search Console</a></li>
-    <li><a href="./jekyll-gitHubGist">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(7) - GitHub Gist</a></li>
-    <li><a href="./jekyll-travisCI">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI</a></li>
-
-</ul>
-
-<p>github blog &#xc0ac;&#xc6a9;&#xc744; &#xc704;&#xd55c; Jykell Setup &#xacfc;&#xc815;&#xc785;&#xb2c8;&#xb2e4;.</p>
-
-<ul>
-  <li>Reference: https://moon9342.github.io/jekyll-gist</li>
-</ul>
-
-<hr>
-
-<ol>
-  <li>
-    <p>Install jekyll-gist</p>
-
-    <blockquote>
-      <p>gem install jekyll-gist</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>_config.yml &#xc124;&#xc815;</p>
-
-    <blockquote>
-      <p>plugins&#xc5d0; jekyll-gist &#xcd94;&#xac00;</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>gist &#xc801;&#xc6a9;</p>
-
-    <blockquote>
-      <p>gist link copy<br>
-&#xd615;&#xc2dd;&#xc740; &#xb2e4;&#xc74c;&#xacfc; &#xac19;&#xc74c;</p>
-    </blockquote>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src=&quot;https://gist.github.com/userID/url.js&quot;&gt;&lt;/script&gt;
-</code></pre></div>    </div>
-
-    <blockquote>
-      <p>&#xc544;&#xb798; &#xcc98;&#xb7fc; &#xc0ac;&#xc6a9;.</p>
-    </blockquote>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;&lt;script src=&quot;https://gist.github.com/userID/url.js&quot;&gt; &lt;/script&gt;
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<hr>
-
-<p>&#xd2b9;&#xc774;&#xc0ac;&#xd56d; &#xc5c6;&#xc774; &#xc798; &#xb3d9;&#xc791;&#xd569;&#xb2c8;&#xb2e4;.</p>
-
-                </div>
-            ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(0) - Jekyll Start]]></title><description><![CDATA[<div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-start/</link><guid isPermaLink="false">4e70bbf014e34b068cdafd27</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
-                <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
-<ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(4) - Highlighting with rouge</a></li>
-    <li><a href="./jekyll-searchFunction">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(5) - Search function with lunr.js</a></li>
-    <li><a href="./jekyll-googleSearchConsole">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(6) - Google Search Console</a></li>
-    <li><a href="./jekyll-gitHubGist">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(7) - GitHub Gist</a></li>
-    <li><a href="./jekyll-travisCI">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI</a></li>
-
-</ul>
-
-<p>github blog&#xb97c; &#xc0dd;&#xc131;&#xd558;&#xba74;&#xc11c; &#xc0ac;&#xc6a9;&#xd558;&#xac8c; &#xb41c; jekyll&#xc5d0; &#xb300;&#xd55c; post &#xc785;&#xb2c8;&#xb2e4;.<br>
-&#xc5bc;&#xd070;&#xc6b0;&#xb3d9;&#xb2d8; &#xbe14;&#xb85c;&#xadf8;(https://moon9342.github.io/)&#xb97c; &#xcc38;&#xace0;&#xd558;&#xc5ec; &#xc9c4;&#xd589;&#xd588;&#xc2b5;&#xb2c8;&#xb2e4;.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">helloWorld</span><span class="p">(</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">print</span><span class="p">(</span><span class="dl">&quot;</span><span class="s2">Hello World</span><span class="dl">&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
 
                 </div>
             ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(4) - Highlighting with rouge]]></title><description><![CDATA[<div class="kg-card-markdown">
@@ -525,9 +312,9 @@ Issue. &#xadf8; &#xc774;&#xc720;. &#xc218;&#xc815; &#xbc29;&#xbc95;&#xc774; &#xb
     <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
     <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
     <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-highlighting/</link><guid isPermaLink="false">4e3c89c9648a44d3a4f06116</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-highlighting/</link><guid isPermaLink="false">c960618788ae442b80a3522d</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Fri, 08 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
                 <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(4) - Highlighting with rouge"><p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
 <ul class="table-of-contents-list">
     <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
     <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
@@ -585,48 +372,68 @@ Issue. &#xadf8; &#xc774;&#xc720;. &#xc218;&#xc815; &#xbc29;&#xbc95;&#xc774; &#xb
 <p>&#xd2b9;&#xc774;&#xc0ac;&#xd56d; &#xc5c6;&#xc774; &#xc798; &#xc791;&#xb3d9;.</p>
 
                 </div>
-            ]]></content:encoded></item><item><title><![CDATA[React - fetch]]></title><description><![CDATA[<div class="kg-card-markdown">
-                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
+            ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(5) - Search function with lunr.js]]></title><description><![CDATA[<div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
 <ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
-    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
-    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
-    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub</a></li></ul></div>]]></description><link>http://localhost:2368/web-react-fetch/</link><guid isPermaLink="false">4bbabffb544949f9bbc988a1</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
+    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-searchfunction/</link><guid isPermaLink="false">bdf71db4a3fa4073a1ea33d9</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Fri, 08 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
                 <div class="kg-card-markdown">
-                    <!-- <span class="table-of-contents-list">Jekyll 따라하기의 목차입니다.</span>
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(5) - Search function with lunr.js"><p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
 <ul class="table-of-contents-list">
-    <li><a href="./jekyll-start">Jekyll 따라하기(0) - Jekyll Start</a></li>
-    <li><a href="./jekyll-setup">Jekyll 따라하기(1) - Jekyll Setup</a></li>
-    <li><a href="./jekyll-modifyAndPublish">Jekyll 따라하기(2) - Jekyll Modify and Publish</a></li>
-    <li><a href="./jekyll-webFont">Jekyll 따라하기(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll 따라하기(4) - Highlighting with rouge</a></li>
-    <li><a href="./jekyll-searchFunction">Jekyll 따라하기(5) - Search function with lunr.js</a></li>
-    <li><a href="./jekyll-googleSearchConsole">Jekyll 따라하기(6) - Google Search Console</a></li>
-    <li><a href="./jekyll-gitHubGist">Jekyll 따라하기(7) - GitHub Gist</a></li>
-    <li><a href="./jekyll-travisCI">Jekyll 따라하기(8) - Travis CI</a></li>
+    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(4) - Highlighting with rouge</a></li>
+    <li><a href="./jekyll-searchFunction">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(5) - Search function with lunr.js</a></li>
+    <li><a href="./jekyll-googleSearchConsole">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(6) - Google Search Console</a></li>
+    <li><a href="./jekyll-gitHubGist">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(7) - GitHub Gist</a></li>
+    <li><a href="./jekyll-travisCI">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI</a></li>
 
-</ul> -->
+</ul>
 
-<p>API&#xb97c; &#xb290;&#xc838;&#xc624;&#xb294; React &#xae30;&#xb2a5;. fetch</p>
+<p>github blog &#xc0ac;&#xc6a9;&#xc744; &#xc704;&#xd55c; Jykell Setup &#xacfc;&#xc815;&#xc785;&#xb2c8;&#xb2e4;.</p>
 
-<!-- - Reference: https://en.wikipedia.org/wiki/Search_engine_optimization -->
-
-<hr>
-<p>url&#xc5d0;&#xc11c; fetch&#xb97c; &#xc0ac;&#xc6a9;&#xd558;&#xc5ec; json &#xc815;&#xbcf4;&#xb97c; &#xb04c;&#xc5b4;&#xc640; &#xbcf4;&#xc5ec;&#xc90c;.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fetch(&quot;url&quot;)
-  .then((response) =&gt; response.json())
-  .then((data) =&gt; console.log(data));
-</code></pre></div></div>
+<ul>
+  <li>Reference: https://moon9342.github.io/jekyll-search</li>
+</ul>
 
 <hr>
 
-<p>&#xd654;&#xba74;&#xc5d0; &#xbfcc;&#xb824;&#xc904; &#xb54c;, useState&#xc640; map &#xae30;&#xb2a5;&#xc744; &#xc0ac;&#xc6a9;&#xd558;&#xc5ec; &#xc9c4;&#xd589;&#xd558;&#xb824;&#xb294;&#xb370;
-&#xb9c8;&#xc74c;&#xb300;&#xb85c; &#xb418;&#xc9c0; &#xc54a;&#xc544; &#xc2dc;&#xb3c4;&#xc911;.. &#xc131;&#xacf5; &#xd6c4; &#xc5c5;&#xb370;&#xc774;&#xd2b8; &#xd558;&#xb824;&#xd569;&#xb2c8;&#xb2e4;.</p>
+<ol>
+  <li>
+    <p>search link &#xc0dd;&#xc131;</p>
+
+    <blockquote>
+      <p>_includes/site-nav.html &#xc5d0;&#xc11c; subscribe&#xb97c; search&#xb85c; &#xbcc0;&#xacbd;</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Search Page &#xc124;&#xc815;</p>
+
+    <blockquote>
+      <p>_layouts/default.html &#xc218;&#xc815;
+_includes/subscribe-form.html &#xc218;&#xc815;
+search.html &#xc0dd;&#xc131; &#xbc0f; &#xc218;&#xc815;</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>lunr.js &#xb2e4;&#xc6b4;&#xb85c;&#xb4dc; &#xbc0f; &#xc124;&#xc815;</p>
+
+    <blockquote>
+      <p>assets/js/lunr.js</p>
+    </blockquote>
+  </li>
+</ol>
+
+<hr>
+
+<p>lunr.js &#xcd94;&#xcc9c;&#xcf54;&#xb4dc; &#xc0ac;&#xc6a9;&#xc2dc; &#xb3d9;&#xc791;&#xd558;&#xc9c0; &#xc54a;&#xc74c;.<br>
+https://lunrjs.com/ &#xc5d0;&#xc11c; &#xb2e4;&#xc6b4;&#xb85c;&#xb4dc; &#xbc1b;&#xc544;&#xb3c4; &#xb3d9;&#xc791;&#xd558;&#xc9c0; &#xc54a;&#xc74c;.<br>
+&#xbb38;&#xc81c;&#xc810; &#xd655;&#xc778; &#xc911;&#x2026;</p>
 
                 </div>
             ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(2) - Jekyll Modify and Publish]]></title><description><![CDATA[<div class="kg-card-markdown">
@@ -636,9 +443,9 @@ Issue. &#xadf8; &#xc774;&#xc720;. &#xc218;&#xc815; &#xbc29;&#xbc95;&#xc774; &#xb
     <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
     <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
     <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-modifyandpublish/</link><guid isPermaLink="false">43d6a622bc414696b450e7b8</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-modifyandpublish/</link><guid isPermaLink="false">853048dca3d843439880ac1c</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Fri, 08 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
                 <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish"><p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
 <ul class="table-of-contents-list">
     <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
     <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
@@ -743,6 +550,137 @@ googling&#xc73c;&#xb85c; &#xd574;&#xacb0;&#xc774; &#xbd88;&#xac00;&#xb2a5; &#xd5
 &#xd574;&#xacb0;&#xcc45;&#xc73c;&#xb85c; &#xad00;&#xb828; package &#xc2f9; &#xbc00;&#xace0; &#xc7ac;&#xc124;&#xce58; &#xd558;&#xb2c8; &#xc798; &#xb3d9;&#xc791;&#xd588;&#xc2b5;&#xb2c8;&#xb2e4;.</p>
 
                 </div>
+            ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(7) - GitHub Gist]]></title><description><![CDATA[<div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-githubgist/</link><guid isPermaLink="false">2c36d4a6a5fb4388add8712c</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Fri, 08 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
+                <div class="kg-card-markdown">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(7) - GitHub Gist"><p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(4) - Highlighting with rouge</a></li>
+    <li><a href="./jekyll-searchFunction">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(5) - Search function with lunr.js</a></li>
+    <li><a href="./jekyll-googleSearchConsole">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(6) - Google Search Console</a></li>
+    <li><a href="./jekyll-gitHubGist">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(7) - GitHub Gist</a></li>
+    <li><a href="./jekyll-travisCI">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI</a></li>
+
+</ul>
+
+<p>github blog &#xc0ac;&#xc6a9;&#xc744; &#xc704;&#xd55c; Jykell Setup &#xacfc;&#xc815;&#xc785;&#xb2c8;&#xb2e4;.</p>
+
+<ul>
+  <li>Reference: https://moon9342.github.io/jekyll-gist</li>
+</ul>
+
+<hr>
+
+<ol>
+  <li>
+    <p>Install jekyll-gist</p>
+
+    <blockquote>
+      <p>gem install jekyll-gist</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>_config.yml &#xc124;&#xc815;</p>
+
+    <blockquote>
+      <p>plugins&#xc5d0; jekyll-gist &#xcd94;&#xac00;</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>gist &#xc801;&#xc6a9;</p>
+
+    <blockquote>
+      <p>gist link copy<br>
+&#xd615;&#xc2dd;&#xc740; &#xb2e4;&#xc74c;&#xacfc; &#xac19;&#xc74c;</p>
+    </blockquote>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src=&quot;https://gist.github.com/userID/url.js&quot;&gt;&lt;/script&gt;
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>&#xc544;&#xb798; &#xcc98;&#xb7fc; &#xc0ac;&#xc6a9;.</p>
+    </blockquote>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;noscript&gt;&lt;pre&gt;404: Not Found&lt;/pre&gt;&lt;/noscript&gt;&lt;script src=&quot;https://gist.github.com/userID/url.js&quot;&gt; &lt;/script&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<hr>
+
+<p>&#xd2b9;&#xc774;&#xc0ac;&#xd56d; &#xc5c6;&#xc774; &#xc798; &#xb3d9;&#xc791;&#xd569;&#xb2c8;&#xb2e4;.</p>
+
+                </div>
+            ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(3) - Jekyll Web Font]]></title><description><![CDATA[<div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-webfont/</link><guid isPermaLink="false">2712585995844523aeda7d91</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Fri, 08 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
+                <div class="kg-card-markdown">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font"><p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(4) - Highlighting with rouge</a></li>
+    <li><a href="./jekyll-searchFunction">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(5) - Search function with lunr.js</a></li>
+    <li><a href="./jekyll-googleSearchConsole">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(6) - Google Search Console</a></li>
+    <li><a href="./jekyll-gitHubGist">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(7) - GitHub Gist</a></li>
+    <li><a href="./jekyll-travisCI">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI</a></li>
+
+</ul>
+
+<p>github blog &#xc0ac;&#xc6a9;&#xc744; &#xc704;&#xd55c; Jykell Setup &#xacfc;&#xc815;&#xc785;&#xb2c8;&#xb2e4;.</p>
+
+<ul>
+  <li>Reference: https://moon9342.github.io/jekyll-font</li>
+</ul>
+
+<hr>
+
+<ol>
+  <li>
+    <p>_layout/default.html</p>
+
+    <blockquote>
+      <p>Configure with web font link</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>assets/css/screen.css</p>
+
+    <blockquote>
+      <p>&#xc0ac;&#xc6a9; font &#xc124;&#xc815;</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Build</p>
+
+    <blockquote>
+      <p>bundle exec jekyll serve</p>
+    </blockquote>
+  </li>
+</ol>
+
+<hr>
+
+<p>&#xd2b9;&#xc774;&#xc0ac;&#xd56d; &#xc5c6;&#xc774; &#xc798; &#xc791;&#xb3d9;.</p>
+
+                </div>
             ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(6) - Google Search Console]]></title><description><![CDATA[<div class="kg-card-markdown">
                     <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
 <ul class="table-of-contents-list">
@@ -750,9 +688,9 @@ googling&#xc73c;&#xb85c; &#xd574;&#xacb0;&#xc774; &#xbd88;&#xac00;&#xb2a5; &#xd5
     <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
     <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
     <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-googlesearchconsole/</link><guid isPermaLink="false">24747bb8aba6408a8a0bdf61</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-googlesearchconsole/</link><guid isPermaLink="false">1213acc76af540179f806950</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Fri, 08 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
                 <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(6) - Google Search Console"><p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
 <ul class="table-of-contents-list">
     <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
     <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
@@ -809,7 +747,7 @@ Github page url &#xc5f0;&#xacb0;</p>
 
 <p>&#xc81c;&#xcd9c;&#xb41c; &#xc0ac;&#xc774;&#xd2b8;&#xb9f5; - &#xc0c1;&#xd0dc;: &#xac00;&#xc838;&#xc62c; &#xc218; &#xc5c6;&#xc74c; error &#xbc1c;&#xc0dd;.<br>
 &#xbb38;&#xc81c;&#xc810; &#xd30c;&#xc545; &#xc911;.<br>
-<img src="./assets/built/images/sitemap failed to get.png" alt="Sitemap import error"></p>
+<img src="./assets/built/images/sitemap failed to get.png" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(6) - Google Search Console"></p>
 
                 </div>
             ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(1) - Jekyll Setup]]></title><description><![CDATA[<div class="kg-card-markdown">
@@ -819,9 +757,9 @@ Github page url &#xc5f0;&#xacb0;</p>
     <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
     <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
     <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
-    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-setup/</link><guid isPermaLink="false">04119012f5ee47ddb4ac83e0</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 06:03:49 GMT</pubDate><content:encoded><![CDATA[
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-setup/</link><guid isPermaLink="false">055c184b4be848b992261420</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sat, 02 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
                 <div class="kg-card-markdown">
-                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup"><p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
 <ul class="table-of-contents-list">
     <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
     <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
@@ -885,4 +823,66 @@ Github page url &#xc5f0;&#xacb0;</p>
 <p>&#xd2b9;&#xc774;&#xc0ac;&#xd56d;&#xc740; &#xb530;&#xb85c; &#xc5c6;&#xc5c8;&#xc2b5;&#xb2c8;&#xb2e4;.</p>
 
                 </div>
-            ]]></content:encoded></item><item><title><![CDATA[Coming soon]]></title><description><![CDATA[<p>This is a brand new site that&apos;s just getting started. Things will be up and running here shortly, but you can <a href="#/portal/" rel="noopener noreferrer">subscribe</a> in the meantime if you&apos;d like to stay up to date and receive emails when new content is published!</p>]]></description><link>http://localhost:2368/coming-soon/</link><guid isPermaLink="false">6ac1d55c8703e103a33a1ca8</guid><category><![CDATA[News]]></category><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Sun, 04 Oct 2026 04:26:04 GMT</pubDate><media:content url="https://static.ghost.org/v4.0.0/images/feature-image.jpg" medium="image"/><content:encoded><![CDATA[<img src="https://static.ghost.org/v4.0.0/images/feature-image.jpg" alt="Coming soon"><p>This is a brand new site that&apos;s just getting started. Things will be up and running here shortly, but you can <a href="#/portal/" rel="noopener noreferrer">subscribe</a> in the meantime if you&apos;d like to stay up to date and receive emails when new content is published!</p>]]></content:encoded></item></channel></rss>
+            ]]></content:encoded></item><item><title><![CDATA[첫 블로그 포스트]]></title><description><![CDATA[<div class="kg-card-markdown">
+                    <p>&#xccab; &#xd3ec;&#xc2a4;&#xd305; &#xc785;&#xb2c8;&#xb2e4;.</p>
+
+<p>&#xc81c;&#xac00; &#xad00;&#xc2ec;&#xc788;&#xb294; &#xc601;&#xc5ed;&#xb4e4;&#xc5d0; &#xb300;&#xd55c; &#xd3ec;&#xc2a4;&#xd2b8;&#xb97c; &#xd560; &#xc0dd;&#xac01;&#xc785;&#xb2c8;&#xb2e4;.</p>
+
+<ul>
+  <li>Engineering</li>
+  <li>Robot</li>
+  <li>AI</li>
+  <li>Server</li>
+  <li>Linux</li>
+  <li>&#xac1c;&#xc778;&#xc801;&#xc778; &#xad00;&#xc2ec;&#xc0ac;&#xb4e4;</li>
+</ul>
+
+                </div>]]></description><link>http://localhost:2368/common-firstpost/</link><guid isPermaLink="false">fdd9fa5617684a9694f7dd51</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Fri, 01 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
+                <div class="kg-card-markdown">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="&#xccab; &#xbe14;&#xb85c;&#xadf8; &#xd3ec;&#xc2a4;&#xd2b8;"><p>&#xccab; &#xd3ec;&#xc2a4;&#xd305; &#xc785;&#xb2c8;&#xb2e4;.</p>
+
+<p>&#xc81c;&#xac00; &#xad00;&#xc2ec;&#xc788;&#xb294; &#xc601;&#xc5ed;&#xb4e4;&#xc5d0; &#xb300;&#xd55c; &#xd3ec;&#xc2a4;&#xd2b8;&#xb97c; &#xd560; &#xc0dd;&#xac01;&#xc785;&#xb2c8;&#xb2e4;.</p>
+
+<ul>
+  <li>Engineering</li>
+  <li>Robot</li>
+  <li>AI</li>
+  <li>Server</li>
+  <li>Linux</li>
+  <li>&#xac1c;&#xc778;&#xc801;&#xc778; &#xad00;&#xc2ec;&#xc0ac;&#xb4e4;</li>
+</ul>
+
+                </div>
+            ]]></content:encoded></item><item><title><![CDATA[Jekyll 따라하기(0) - Jekyll Start]]></title><description><![CDATA[<div class="kg-card-markdown">
+                    <p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;</a></li></ul></div>]]></description><link>http://localhost:2368/jekyll-start/</link><guid isPermaLink="false">d4ccc0170cb74ff89ff22d3d</guid><dc:creator><![CDATA[Ghost]]></dc:creator><pubDate>Fri, 01 Jan 2021 10:00:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" medium="image"/><content:encoded><![CDATA[
+                <div class="kg-card-markdown">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start"><p><span class="table-of-contents-list">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;&#xc758; &#xbaa9;&#xcc28;&#xc785;&#xb2c8;&#xb2e4;.</span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./jekyll-start">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(0) - Jekyll Start</a></li>
+    <li><a href="./jekyll-setup">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(1) - Jekyll Setup</a></li>
+    <li><a href="./jekyll-modifyAndPublish">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(2) - Jekyll Modify and Publish</a></li>
+    <li><a href="./jekyll-webFont">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(3) - Jekyll Web Font</a></li>
+    <li><a href="./jekyll-highlighting">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(4) - Highlighting with rouge</a></li>
+    <li><a href="./jekyll-searchFunction">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(5) - Search function with lunr.js</a></li>
+    <li><a href="./jekyll-googleSearchConsole">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(6) - Google Search Console</a></li>
+    <li><a href="./jekyll-gitHubGist">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(7) - GitHub Gist</a></li>
+    <li><a href="./jekyll-travisCI">Jekyll &#xb530;&#xb77c;&#xd558;&#xae30;(8) - Travis CI</a></li>
+
+</ul>
+
+<p>github blog&#xb97c; &#xc0dd;&#xc131;&#xd558;&#xba74;&#xc11c; &#xc0ac;&#xc6a9;&#xd558;&#xac8c; &#xb41c; jekyll&#xc5d0; &#xb300;&#xd55c; post &#xc785;&#xb2c8;&#xb2e4;.<br>
+&#xc5bc;&#xd070;&#xc6b0;&#xb3d9;&#xb2d8; &#xbe14;&#xb85c;&#xadf8;(https://moon9342.github.io/)&#xb97c; &#xcc38;&#xace0;&#xd558;&#xc5ec; &#xc9c4;&#xd589;&#xd588;&#xc2b5;&#xb2c8;&#xb2e4;.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">helloWorld</span><span class="p">(</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">print</span><span class="p">(</span><span class="dl">&quot;</span><span class="s2">Hello World</span><span class="dl">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+                </div>
+            ]]></content:encoded></item></channel></rss>

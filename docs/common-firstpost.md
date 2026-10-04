@@ -4,8 +4,8 @@
 
 # 첫 블로그 포스트
 - URL: http://localhost:2368/common-firstpost/
-- Published: 2026-10-04T06:03:49.000Z
-- Updated: 2026-10-04T06:03:49.000Z
+- Published: 2021-01-01T10:00:00.000Z
+- Updated: 2021-01-01T10:00:00.000Z
 - Author: Ghost
 
 첫 포스팅 입니다.

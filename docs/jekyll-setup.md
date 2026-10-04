@@ -4,8 +4,8 @@
 
 # Jekyll 따라하기(1) - Jekyll Setup
 - URL: http://localhost:2368/jekyll-setup/
-- Published: 2026-10-04T06:03:49.000Z
-- Updated: 2026-10-04T06:03:49.000Z
+- Published: 2021-01-02T10:00:00.000Z
+- Updated: 2021-01-02T10:00:00.000Z
 - Author: Ghost
 
 Jekyll 따라하기의 목차입니다.

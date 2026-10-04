@@ -4,8 +4,8 @@
 
 # Scikit-learn
 - URL: http://localhost:2368/ai-scikit-learn/
-- Published: 2026-10-04T06:03:49.000Z
-- Updated: 2026-10-04T06:03:49.000Z
+- Published: 2021-01-30T10:00:00.000Z
+- Updated: 2021-01-30T10:00:00.000Z
 - Author: Ghost
 
 Information about Machine Learning Algorithm.
