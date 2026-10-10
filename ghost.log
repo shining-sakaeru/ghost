@@ -713,3 +713,324 @@
 [2026-10-10 02:53:25] [36mINFO[39m "GET /jekyll-start/jekyll-travisCI" [36m301[39m 1ms
 [2026-10-10 02:53:25] [36mINFO[39m "GET /jekyll-start/jekyll-travisCI/" [36m301[39m 1ms
 [2026-10-10 02:53:25] [36mINFO[39m "GET /jekyll-start/jekyll-travisci/" [33m404[39m 5ms
+[2026-10-10 02:56:16] [36mINFO[39m "GET /" [32m200[39m 172ms
+[2026-10-10 02:56:16] [36mINFO[39m "GET /robots.txt" [32m200[39m 1ms
+[2026-10-10 02:56:16] [36mINFO[39m "GET /assets/built/screen.css?v=QNPN-eKOOxYMpyK5" [32m200[39m 2ms
+[2026-10-10 02:56:16] [36mINFO[39m "GET /assets/built/source.js?v=33sa4-qy5thAFPQH" [32m200[39m 1ms
+[2026-10-10 02:56:16] [36mINFO[39m "GET /assets/fonts/inter-roman.woff2?v=OecsB5TBLy27FKD2" [32m200[39m 1ms
+[2026-10-10 02:56:16] [36mINFO[39m "GET /public/cards.min.js?v=ShRHxgy4po8zN-Wf" [32m200[39m 1ms
+[2026-10-10 02:56:16] [36mINFO[39m "GET /public/cards.min.css?v=WwnU9jw5ancNC8Gc" [32m200[39m 1ms
+[2026-10-10 02:56:16] [36mINFO[39m "GET /public/comment-counts.min.js?v=oFYkaGLdiMqB8VN9" [32m200[39m 0ms
+[2026-10-10 02:56:16] [36mINFO[39m "GET /public/member-attribution.min.js?v=AKG4hWena9j3yX3I" [32m200[39m 0ms
+[2026-10-10 02:56:16] [31mERROR[39m Cannot read properties of null (reading 'name')
+[31m
+[31mCannot read properties of null (reading 'name')[39m
+
+[90m----------------------------------------[39m
+
+[90mTypeError: Cannot read properties of null (reading 'name')
+    at getPostSchema (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/schema.js:126:42)
+    at getSchema (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/schema.js:198:14)
+    at /home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/get-meta.js:83:25
+    at async Object.ghost_head (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/helpers/ghost_head.js:392:18)
+    at async Object.returnAsync (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/services/helpers/handlebars.js:16:24)[39m
+[39m
+[2026-10-10 02:56:16] [36mINFO[39m "GET /tailscale-server-security-setup/" [32m200[39m 62ms
+[2026-10-10 02:56:16] [31mERROR[39m Cannot read properties of null (reading 'name')
+[31m
+[31mCannot read properties of null (reading 'name')[39m
+
+[90m----------------------------------------[39m
+
+[90mTypeError: Cannot read properties of null (reading 'name')
+    at getPostSchema (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/schema.js:126:42)
+    at getSchema (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/schema.js:198:14)
+    at /home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/get-meta.js:83:25
+    at async Object.ghost_head (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/helpers/ghost_head.js:392:18)
+    at async Object.returnAsync (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/services/helpers/handlebars.js:16:24)[39m
+[39m
+[2026-10-10 02:56:16] [36mINFO[39m "GET /series-4-troubleshooting-faq/" [32m200[39m 55ms
+[2026-10-10 02:56:16] [31mERROR[39m Cannot read properties of null (reading 'name')
+[31m
+[31mCannot read properties of null (reading 'name')[39m
+
+[90m----------------------------------------[39m
+
+[90mTypeError: Cannot read properties of null (reading 'name')
+    at getPostSchema (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/schema.js:126:42)
+    at getSchema (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/schema.js:198:14)
+    at /home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/get-meta.js:83:25
+    at async Object.ghost_head (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/helpers/ghost_head.js:392:18)
+    at async Object.returnAsync (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/services/helpers/handlebars.js:16:24)[39m
+[39m
+[2026-10-10 02:56:16] [36mINFO[39m "GET /series-3-github-pages-adsense-ads-txt/" [32m200[39m 92ms
+[2026-10-10 02:56:16] [31mERROR[39m Cannot read properties of null (reading 'name')
+[31m
+[31mCannot read properties of null (reading 'name')[39m
+
+[90m----------------------------------------[39m
+
+[90mTypeError: Cannot read properties of null (reading 'name')
+    at getPostSchema (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/schema.js:126:42)
+    at getSchema (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/schema.js:198:14)
+    at /home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/get-meta.js:83:25
+    at async Object.ghost_head (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/helpers/ghost_head.js:392:18)
+    at async Object.returnAsync (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/services/helpers/handlebars.js:16:24)[39m
+[39m
+[2026-10-10 02:56:16] [36mINFO[39m "GET /series-2-jekyll-ghost-blogger-migration/" [32m200[39m 69ms
+[2026-10-10 02:56:16] [31mERROR[39m Cannot read properties of null (reading 'name')
+[31m
+[31mCannot read properties of null (reading 'name')[39m
+
+[90m----------------------------------------[39m
+
+[90mTypeError: Cannot read properties of null (reading 'name')
+    at getPostSchema (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/schema.js:126:42)
+    at getSchema (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/schema.js:198:14)
+    at /home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/meta/get-meta.js:83:25
+    at async Object.ghost_head (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/helpers/ghost_head.js:392:18)
+    at async Object.returnAsync (/home/openhands/workspace/project/ghost/versions/6.67.0/core/frontend/services/helpers/handlebars.js:16:24)[39m
+[39m
+[2026-10-10 02:56:16] [36mINFO[39m "GET /series-1-oracle-ghost-source-theme/" [32m200[39m 59ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /coming-soon/" [32m200[39m 53ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /web-react-fetch/" [32m200[39m 52ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /ai-scikit-learn/" [32m200[39m 54ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /web-seo/" [32m200[39m 53ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/" [32m200[39m 52ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/" [32m200[39m 52ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/" [32m200[39m 52ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-modifyandpublish/" [32m200[39m 52ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-githubgist/" [32m200[39m 53ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-webfont/" [32m200[39m 52ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-googlesearchconsole/" [32m200[39m 51ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-setup/" [32m200[39m 51ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /common-firstpost/" [32m200[39m 49ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-start/" [32m200[39m 52ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /assets/images/default-skin.png" [32m200[39m 2ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /assets/images/default-skin.svg" [32m200[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /assets/images/preloader.gif" [32m200[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /author/noah/" [32m200[39m 92ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /web-seo/assets/built/images/setsitecheckup.png" [33m404[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-start" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-start/" [33m404[39m 6ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-setup" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-setup/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-modifyAndPublish" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-modifyAndPublish/" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-modifyandpublish/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-webFont" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-webFont/" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-webfont/" [33m404[39m 4ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-highlighting" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-highlighting/" [33m404[39m 6ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-searchFunction" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-searchFunction/" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-searchfunction/" [33m404[39m 6ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-googleSearchConsole" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-googleSearchConsole/" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-googlesearchconsole/" [33m404[39m 7ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-gitHubGist" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-gitHubGist/" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-githubgist/" [33m404[39m 6ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-travisCI" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-travisCI/" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/jekyll-travisci/" [33m404[39m 7ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/assets/built/images/travis%20error.png" [33m404[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/assets/built/images/travis%20select%20plan.png" [33m404[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/assets/built/images/travis%20trial%20plan.png" [33m404[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/assets/built/images/travis%20credit%20usage.png" [33m404[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/assets/built/images/travis%20build%20start.png" [33m404[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-travisci/assets/built/images/travis%20build%20completed.png" [33m404[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-start" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-start/" [33m404[39m 7ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-setup" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-setup/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-modifyAndPublish" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-modifyAndPublish/" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-modifyandpublish/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-webFont" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-webFont/" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-webfont/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-highlighting" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-highlighting/" [33m404[39m 4ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-searchFunction" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-searchFunction/" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-searchfunction/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-googleSearchConsole" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-googleSearchConsole/" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-googlesearchconsole/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-gitHubGist" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-gitHubGist/" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-githubgist/" [33m404[39m 4ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-travisCI" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-travisCI/" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-highlighting/jekyll-travisci/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-start" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-start/" [33m404[39m 4ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-setup" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-setup/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-modifyAndPublish" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-modifyAndPublish/" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-modifyandpublish/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-webFont" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-webFont/" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-webfont/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-highlighting" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-highlighting/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-searchFunction" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-searchFunction/" [36m301[39m 0ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-searchfunction/" [33m404[39m 5ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-googleSearchConsole" [36m301[39m 1ms
+[2026-10-10 02:56:17] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-googleSearchConsole/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-googlesearchconsole/" [33m404[39m 7ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-gitHubGist" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-gitHubGist/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-githubgist/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-travisCI" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-travisCI/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-searchfunction/jekyll-travisci/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-start" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-start/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-setup" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-setup/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-modifyAndPublish" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-modifyAndPublish/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-modifyandpublish/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-webFont" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-webFont/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-webfont/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-highlighting" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-highlighting/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-searchFunction" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-searchFunction/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-searchfunction/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-googleSearchConsole" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-googleSearchConsole/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-googlesearchconsole/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-gitHubGist" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-gitHubGist/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-githubgist/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-travisCI" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-travisCI/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-modifyandpublish/jekyll-travisci/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-start" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-start/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-setup" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-setup/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-modifyAndPublish" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-modifyAndPublish/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-modifyandpublish/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-webFont" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-webFont/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-webfont/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-highlighting" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-highlighting/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-searchFunction" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-searchFunction/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-searchfunction/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-googleSearchConsole" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-googleSearchConsole/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-googlesearchconsole/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-gitHubGist" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-gitHubGist/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-githubgist/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-travisCI" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-travisCI/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-githubgist/jekyll-travisci/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-start" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-start/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-setup" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-setup/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-modifyAndPublish" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-modifyAndPublish/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-modifyandpublish/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-webFont" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-webFont/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-webfont/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-highlighting" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-highlighting/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-searchFunction" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-searchFunction/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-searchfunction/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-googleSearchConsole" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-googleSearchConsole/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-googlesearchconsole/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-gitHubGist" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-gitHubGist/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-githubgist/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-travisCI" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-travisCI/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-webfont/jekyll-travisci/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-start" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-start/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-setup" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-setup/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-modifyAndPublish" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-modifyAndPublish/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-modifyandpublish/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-webFont" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-webFont/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-webfont/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-highlighting" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-highlighting/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-searchFunction" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-searchFunction/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-searchfunction/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-googleSearchConsole" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-googleSearchConsole/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-googlesearchconsole/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-gitHubGist" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-gitHubGist/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-githubgist/" [33m404[39m 6ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-travisCI" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-travisCI/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/jekyll-travisci/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-googlesearchconsole/assets/built/images/sitemap%20failed%20to%20get.png" [33m404[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-start" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-start/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-setup" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-setup/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-modifyAndPublish" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-modifyAndPublish/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-modifyandpublish/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-webFont" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-webFont/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-webfont/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-highlighting" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-highlighting/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-searchFunction" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-searchFunction/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-searchfunction/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-googleSearchConsole" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-googleSearchConsole/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-googlesearchconsole/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-gitHubGist" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-gitHubGist/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-githubgist/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-travisCI" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-travisCI/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-setup/jekyll-travisci/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-start" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-start/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-setup" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-setup/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-modifyAndPublish" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-modifyAndPublish/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-modifyandpublish/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-webFont" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-webFont/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-webfont/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-highlighting" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-highlighting/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-searchFunction" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-searchFunction/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-searchfunction/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-googleSearchConsole" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-googleSearchConsole/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-googlesearchconsole/" [33m404[39m 5ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-gitHubGist" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-gitHubGist/" [36m301[39m 1ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-githubgist/" [33m404[39m 4ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-travisCI" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-travisCI/" [36m301[39m 0ms
+[2026-10-10 02:56:18] [36mINFO[39m "GET /jekyll-start/jekyll-travisci/" [33m404[39m 5ms
