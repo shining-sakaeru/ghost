@@ -247,9 +247,14 @@ def series_title(title: str, prefix: str) -> str:
 
 
 def blogger_html(post: GhostPost) -> str:
-    # Ghost already supplies semantic HTML; Blogger accepts this directly.
+    # Keep Blogger's post body self-contained and preserve Ghost's featured image.
     marker = f'<!-- ghost-post-id: {html_module.escape(post.id)} -->'
-    return marker + "\n" + post.html
+    image = (
+        f'<p><img src="{html_module.escape(post.feature_image, quote=True)}" '
+        f'alt="{html_module.escape(post.title, quote=True)}" /></p>\n'
+        if post.feature_image else ""
+    )
+    return marker + "\n" + image + post.html
 
 
 def load_state(path: Path) -> dict[str, Any]:
@@ -352,7 +357,10 @@ def blogger_labels(post: GhostPost) -> list[str]:
 
 
 def post_content_hash(post: GhostPost, prefix: str) -> str:
-    payload = json.dumps([post.title, post.html, post.tags, prefix], ensure_ascii=False)
+    payload = json.dumps(
+        [post.title, post.html, post.tags, post.published_at, post.feature_image, prefix],
+        ensure_ascii=False,
+    )
     return hashlib.sha256(payload.encode()).hexdigest()
 
 
@@ -368,7 +376,13 @@ def pending_posts(posts: list[GhostPost], state: dict[str, Any], prefix: str) ->
 def publish_blogger(service: Any, blog_id: str, post: GhostPost, dry_run: bool, publish_status: str = "published", prefix: str = "", max_retries: int = 3) -> dict[str, str]:
     marker = f"ghost-post-id: {post.id}"
     existing = find_blogger_post(service, blog_id, marker)
-    body = {"kind": "blogger#post", "title": series_title(post.title, prefix), "content": blogger_html(post), "labels": blogger_labels(post)}
+    body = {
+        "kind": "blogger#post",
+        "title": series_title(post.title, prefix),
+        "content": blogger_html(post),
+        "labels": blogger_labels(post),
+        "published": parse_date(post.published_at).isoformat(),
+    }
     if dry_run:
         return {"status": "dry_run", "post_id": (existing or {}).get("id", ""), "url": (existing or {}).get("url", "")}
     for attempt in range(max_retries + 1):
