@@ -21,6 +21,7 @@ from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import urlsplit
 
 import requests
 from dotenv import load_dotenv
@@ -246,13 +247,25 @@ def series_title(title: str, prefix: str) -> str:
     return title if title.startswith(prefix) else f"{prefix} {title}"
 
 
+def blogger_image_url(url: str | None) -> str | None:
+    if not url:
+        return None
+    public_origin = os.getenv("BLOGGER_IMAGE_ORIGIN", "https://shining-sakaeru.github.io").rstrip("/")
+    parsed = urlsplit(url)
+    if not parsed.netloc or parsed.netloc == "100.101.144.75:2368":
+        path = parsed.path if parsed.path.startswith("/") else f"/{parsed.path}"
+        return f"{public_origin}{path}"
+    return url
+
+
 def blogger_html(post: GhostPost) -> str:
     # Keep Blogger's post body self-contained and preserve Ghost's featured image.
     marker = f'<!-- ghost-post-id: {html_module.escape(post.id)} -->'
+    image_url = blogger_image_url(post.feature_image)
     image = (
-        f'<p><img src="{html_module.escape(post.feature_image, quote=True)}" '
+        f'<p><img src="{html_module.escape(image_url, quote=True)}" '
         f'alt="{html_module.escape(post.title, quote=True)}" /></p>\n'
-        if post.feature_image else ""
+        if image_url else ""
     )
     return marker + "\n" + image + post.html
 
@@ -358,7 +371,7 @@ def blogger_labels(post: GhostPost) -> list[str]:
 
 def post_content_hash(post: GhostPost, prefix: str) -> str:
     payload = json.dumps(
-        [post.title, post.html, post.tags, post.published_at, post.feature_image, prefix],
+        [post.title, post.html, post.tags, post.published_at, blogger_image_url(post.feature_image), prefix],
         ensure_ascii=False,
     )
     return hashlib.sha256(payload.encode()).hexdigest()
