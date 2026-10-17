@@ -15,6 +15,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -364,24 +365,30 @@ def pending_posts(posts: list[GhostPost], state: dict[str, Any], prefix: str) ->
     ]
 
 
-def publish_blogger(service: Any, blog_id: str, post: GhostPost, dry_run: bool, publish_status: str = "published", prefix: str = "") -> dict[str, str]:
+def publish_blogger(service: Any, blog_id: str, post: GhostPost, dry_run: bool, publish_status: str = "published", prefix: str = "", max_retries: int = 3) -> dict[str, str]:
     marker = f"ghost-post-id: {post.id}"
     existing = find_blogger_post(service, blog_id, marker)
     body = {"kind": "blogger#post", "title": series_title(post.title, prefix), "content": blogger_html(post), "labels": blogger_labels(post)}
     if dry_run:
         return {"status": "dry_run", "post_id": (existing or {}).get("id", ""), "url": (existing or {}).get("url", "")}
-    try:
-        if existing:
-            result = service.posts().update(blogId=blog_id, postId=existing["id"], body=body, publish=publish_status == "published").execute()
-            status = "updated"
-        else:
-            result = service.posts().insert(blogId=blog_id, body=body, isDraft=publish_status != "published").execute()
-            status = "published" if publish_status == "published" else "draft"
-    except Exception as exc:
-        # Google client exceptions can contain request URLs; only report a safe status/code.
-        code = getattr(getattr(exc, "resp", None), "status", None)
-        raise RuntimeError(f"Blogger API {status if existing else 'write'} failed" + (f" (HTTP {code})" if code else ".")) from None
-    return {"status": status, "post_id": str(result.get("id", "")), "url": result.get("url", "")}
+    for attempt in range(max_retries + 1):
+        try:
+            if existing:
+                result = service.posts().update(blogId=blog_id, postId=existing["id"], body=body, publish=publish_status == "published").execute()
+                status = "updated"
+            else:
+                result = service.posts().insert(blogId=blog_id, body=body, isDraft=publish_status != "published").execute()
+                status = "published" if publish_status == "published" else "draft"
+            return {"status": status, "post_id": str(result.get("id", "")), "url": result.get("url", "")}
+        except Exception as exc:
+            code = getattr(getattr(exc, "resp", None), "status", None)
+            if code == 429 and attempt < max_retries:
+                delay = 2 ** attempt
+                LOGGER.warning("Blogger rate limited for %s; retrying in %ss", post.slug, delay)
+                time.sleep(delay)
+                continue
+            raise RuntimeError(f"Blogger API {'update' if existing else 'write'} failed" + (f" (HTTP {code})" if code else ".")) from None
+    raise AssertionError("unreachable")
 
 
 def run_git_push(message: str, dry_run: bool, state_file: Path) -> None:
@@ -457,11 +464,11 @@ def main(argv: Iterable[str] | None = None) -> int:
                 "last_sync_status": blogger_result["status"],
             }
             LOGGER.info("Processed %s: Blogger=%s Markdown=%s", post.slug, blogger_result["status"], path)
+            if not args.dry_run:
+                save_state(args.state_file, state)
 
         if args.dry_run:
             LOGGER.info("Dry run: state file and external services were not changed")
-        else:
-            save_state(args.state_file, state)
         if args.git_push and not args.skip_git_push:
             run_git_push(f"Publish Ghost post(s) to GitHub Pages", args.dry_run, args.state_file)
         return 0
