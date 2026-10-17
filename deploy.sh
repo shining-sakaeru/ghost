@@ -147,6 +147,24 @@ if [[ -s "$URLS" ]]; then
         exit 1
     fi
 fi
+# wget preserves query strings in filenames; browsers request the path without them.
+python3 - "$STAGE" <<'PY'
+from pathlib import Path
+import sys
+
+root = Path(sys.argv[1])
+for path in sorted(root.rglob('*?*'), key=lambda item: len(item.parts), reverse=True):
+    if not path.is_file():
+        continue
+    target = path.with_name(path.name.split('?', 1)[0])
+    if target == path:
+        continue
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if not target.exists():
+        path.rename(target)
+    else:
+        path.unlink()
+PY
 python3 - "$STAGE" "$PUBLIC_URL" <<'PY'
 from pathlib import Path
 import re
