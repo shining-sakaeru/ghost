@@ -165,6 +165,27 @@ for path in sorted(root.rglob('*?*'), key=lambda item: len(item.parts), reverse=
     else:
         path.unlink()
 PY
+python3 - "$STAGE" <<'PY'
+from pathlib import Path
+import sys
+root = Path(sys.argv[1])
+font_link = '<style>@font-face{font-family:"Noto Sans KR";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/notosanskr-400.ttf") format("truetype");}html body,html body *{font-family:"Noto Sans KR",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;}</style>'
+for page in root.rglob('*.html'):
+    try:
+        content = page.read_text(encoding='utf-8')
+    except (OSError, UnicodeError):
+        continue
+    if 'fonts.googleapis.com/css2?family=Noto+Sans+KR' not in content:
+        content = content.replace('</head>', font_link + '\n</head>', 1)
+    page.write_text(content, encoding='utf-8')
+for css in root.rglob('*.css'):
+    try:
+        content = css.read_text(encoding='utf-8')
+    except (OSError, UnicodeError):
+        continue
+    content = content.replace('--font-sans:Inter,', '--font-sans:Inter, "Noto Sans KR",')
+    css.write_text(content, encoding='utf-8')
+PY
 python3 - "$STAGE" "$PUBLIC_URL" <<'PY'
 from pathlib import Path
 import re
@@ -248,6 +269,10 @@ if missing:
         print(f'WARNING: missing exported image: {path.relative_to(root)}', file=sys.stderr)
 PY
 [[ ! -f "$PROJECT_DIR/ads.txt" ]] || cp -a "$PROJECT_DIR/ads.txt" "$STAGE/ads.txt"
+if [[ -d "$PROJECT_DIR/assets/fonts" ]]; then
+    mkdir -p "$STAGE/assets/fonts"
+    cp -a "$PROJECT_DIR/assets/fonts/." "$STAGE/assets/fonts/"
+fi
 
 if [[ -e "$PROJECT_DIR/docs" ]]; then
     mv "$PROJECT_DIR/docs" "$PROJECT_DIR/docs.backup-$STAMP"
