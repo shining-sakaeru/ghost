@@ -115,8 +115,9 @@ Markdown 문법, 코드, URL, front matter를 제외한 한국어 본문 기준�
 - [ ] GitHub Pages URL HTTP 200
 - [ ] GitHub Pages 글의 대표 이미지·본문 이미지·srcset 경로가 정상이며 Ghost 대표 이미지와 동일한 자산을 가리킴
 - [ ] Blogger 글이 생성 또는 업데이트됨
+- [ ] Blogger 동기화 전에 GitHub Pages의 변환된 대표 이미지 URL이 HTTP 200을 반환함
 - [ ] Blogger 본문에 Ghost ID marker 존재
-- [ ] Blogger 본문 첫 대표 이미지가 Ghost 대표 이미지와 동일한 자산을 가리키는 공개 URL임
+- [ ] Blogger 본문 첫 대표 이미지가 Ghost 대표 이미지와 동일한 자산을 가리키는 공개 URL이며 HTTP 200을 반환함
 - [ ] Ghost·GitHub Pages·Blogger의 제목·게시일·태그·대표 이미지가 Ghost 원본 기준으로 일치함
 - [ ] Ghost 원본 링크 또는 canonical 정책 확인
 - [ ] 다음 예약 글 공개 전 동기화 오류 해결
@@ -131,5 +132,7 @@ Markdown 문법, 코드, URL, front matter를 제외한 한국어 본문 기준�
 - GitHub Pages 또는 Blogger 중 하나라도 실패하면 성공으로 기록하지 않는다.
 - 대표 이미지 누락은 공개 전 차단 사유다. 기본 이미지를 적용할 때에도 Ghost 원본을 먼저 업데이트한 뒤 전체 동기화를 실행한다.
 - 썸네일·날짜·본문·태그의 불일치는 Ghost를 정답으로 보고 Ghost → GitHub Pages → Blogger 순서로 보정한다.
+- Blogger가 `/content/images/` 원본 경로를 직접 참조하지 않도록 Pages에 실제로 배포되는 `/content/images/size/w1200/...` 공개 URL로 변환한다.
+- GitHub Pages 배포는 매번 루트 `.nojekyll` 파일을 포함해야 하며, Blogger 동기화 전 변환된 대표 이미지 URL이 HTTP 200인지 확인한다.
 - 정기 동기화는 `ensure_feature_images.py`로 Ghost 대표 이미지 누락을 먼저 보정한 후 `publish_pipeline.py`를 실행한다.
 - 실제 공개 전 dry-run과 draft 게시로 같은 경로를 검증한다.

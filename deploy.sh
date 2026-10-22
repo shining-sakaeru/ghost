@@ -278,6 +278,7 @@ if [[ -e "$PROJECT_DIR/docs" ]]; then
     mv "$PROJECT_DIR/docs" "$PROJECT_DIR/docs.backup-$STAMP"
 fi
 mv "$STAGE" "$PROJECT_DIR/docs"
+touch "$PROJECT_DIR/docs/.nojekyll"
 printf 'Static export generated: %s/docs\n' "$PROJECT_DIR"
 
 if [[ "${DEPLOY_DRY_RUN:-0}" == "1" ]]; then

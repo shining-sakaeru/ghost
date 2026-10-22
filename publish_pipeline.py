@@ -254,6 +254,8 @@ def blogger_image_url(url: str | None) -> str | None:
     parsed = urlsplit(url)
     if not parsed.netloc or parsed.netloc == "100.101.144.75:2368":
         path = parsed.path if parsed.path.startswith("/") else f"/{parsed.path}"
+        if path.startswith("/content/images/") and not path.startswith("/content/images/size/"):
+            path = "/content/images/size/w1200/" + path.removeprefix("/content/images/")
         return f"{public_origin}{path}"
     return url
 

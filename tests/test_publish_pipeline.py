@@ -102,6 +102,16 @@ def test_html_to_markdown_tags_and_series_prefix():
     assert pipeline.series_title("Episode", "") == "Episode"
 
 
+def test_blogger_feature_images_use_public_w1200_pages_path():
+    assert pipeline.blogger_image_url("/content/images/2026/10/series-openhands.png") == (
+        "https://shining-sakaeru.github.io/content/images/size/w1200/2026/10/series-openhands.png"
+    )
+    assert pipeline.blogger_image_url("http://100.101.144.75:2368/content/images/2026/10/series-openhands.png") == (
+        "https://shining-sakaeru.github.io/content/images/size/w1200/2026/10/series-openhands.png"
+    )
+    assert pipeline.blogger_image_url("https://images.unsplash.com/image.jpg") == "https://images.unsplash.com/image.jpg"
+
+
 def test_marker_search_handles_blogger_pagination():
     posts = FakePosts([{"items": [{"id": "old", "content": "unrelated"}], "nextPageToken": "p2"},
                        {"items": [{"id": "found", "content": "<!-- ghost-post-id: ghost-1 -->"}]}])
