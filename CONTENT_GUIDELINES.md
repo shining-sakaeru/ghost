@@ -100,7 +100,8 @@ Markdown 문법, 코드, URL, front matter를 제외한 한국어 본문 기준�
 - [ ] 직접 검증한 정보가 포함됨
 - [ ] 공식 사실과 개인 경험이 구분됨
 - [ ] Secret, 토큰, 내부 주소, 개인정보가 없음
-- [ ] 깨진 이미지와 외부 링크가 없음
+- [ ] 모든 본문 이미지와 외부 링크가 정상이며, 대표 이미지(`feature_image`)가 반드시 지정됨
+- [ ] 대표 이미지는 Ghost·GitHub Pages·Blogger에서 접근 가능한 공개 URL 또는 배포 가능한 `/content/images/` 경로임
 - [ ] 제목·slug·excerpt·태그가 준비됨
 - [ ] 이전 글과 중복 문단이 없음
 - [ ] 모바일에서 소제목과 코드 블록을 읽을 수 있음
@@ -110,10 +111,13 @@ Markdown 문법, 코드, URL, front matter를 제외한 한국어 본문 기준�
 
 - [ ] Ghost 공개 URL HTTP 200
 - [ ] Ghost sitemap에 URL 포함
+- [ ] Ghost의 `feature_image`가 비어 있지 않고 실제로 HTTP 200 또는 배포 가능한 `/content/images/` 경로임
 - [ ] GitHub Pages URL HTTP 200
-- [ ] 이미지와 srcset 경로 정상
+- [ ] GitHub Pages 글의 대표 이미지·본문 이미지·srcset 경로가 정상이며 Ghost 대표 이미지와 동일한 자산을 가리킴
 - [ ] Blogger 글이 생성 또는 업데이트됨
 - [ ] Blogger 본문에 Ghost ID marker 존재
+- [ ] Blogger 본문 첫 대표 이미지가 Ghost 대표 이미지와 동일한 자산을 가리키는 공개 URL임
+- [ ] Ghost·GitHub Pages·Blogger의 제목·게시일·태그·대표 이미지가 Ghost 원본 기준으로 일치함
 - [ ] Ghost 원본 링크 또는 canonical 정책 확인
 - [ ] 다음 예약 글 공개 전 동기화 오류 해결
 
@@ -125,4 +129,7 @@ Markdown 문법, 코드, URL, front matter를 제외한 한국어 본문 기준�
 - 로그에 Authorization header, access token, refresh token을 출력하지 않는다.
 - 배포 작업은 동시에 두 개 이상 실행하지 않도록 잠금한다.
 - GitHub Pages 또는 Blogger 중 하나라도 실패하면 성공으로 기록하지 않는다.
+- 대표 이미지 누락은 공개 전 차단 사유다. 기본 이미지를 적용할 때에도 Ghost 원본을 먼저 업데이트한 뒤 전체 동기화를 실행한다.
+- 썸네일·날짜·본문·태그의 불일치는 Ghost를 정답으로 보고 Ghost → GitHub Pages → Blogger 순서로 보정한다.
+- 정기 동기화는 `ensure_feature_images.py`로 Ghost 대표 이미지 누락을 먼저 보정한 후 `publish_pipeline.py`를 실행한다.
 - 실제 공개 전 dry-run과 draft 게시로 같은 경로를 검증한다.

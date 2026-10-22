@@ -30,6 +30,8 @@ jobs:
         env:
           GHOST_URL: ${{ secrets.GHOST_URL }}
           GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
+          GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
+          DEFAULT_FEATURE_IMAGE: /content/images/2026/10/series-openhands.png
           BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           BLOGGER_OAUTH_CLIENT_JSON: ${{ secrets.BLOGGER_OAUTH_CLIENT_JSON }}
           BLOGGER_OAUTH_TOKEN_JSON: ${{ secrets.BLOGGER_OAUTH_TOKEN_JSON }}
@@ -47,4 +49,5 @@ jobs:
                   path.write_text(value, encoding="utf-8")
                   path.chmod(0o600)
           PY
+          python ensure_feature_images.py
           python publish_pipeline.py --git-push
